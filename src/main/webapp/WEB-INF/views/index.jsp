@@ -24,24 +24,8 @@
 <!-- qui dentro il contenuto della pagina  -->
 <div class="content">
 
-    <div class="page">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-12 title text-center">
-                    <h1>Menu</h1>
-                </div>
-                <div class="col-lg-12">
 
-                    <c:forEach var="piatto" items="${piatti}">
-                        <div class="card">
-                            <p class="card-title">${piatto.titolo}</p>
-                            <p class="">${piatto.descrizione}</p>
-                        </div>
-                    </c:forEach>
-                </div>
-            </div>
-        </div>
-    </div>
+
 
 </div>
 <!-- fine contenuto pagina -->

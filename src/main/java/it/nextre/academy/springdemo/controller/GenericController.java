@@ -37,22 +37,21 @@ public class GenericController {
         model.addAttribute("pranzo",pranzo);
         model.addAttribute("cena",cena);
 
-        return "homepage-1";
+        return "index";
     }
 
-    @GetMapping("/index2")
-    public String getHome2(){
-        return "homepage-2";
-    }
 
+
+
+    /*
     @GetMapping("/primo/dati")
     public String getDati(Model model, HttpServletRequest richiesta, @RequestParam(name="nome", required = false) String strnome){
         //il model conterrà i dati da passare alla view
         //mille operazioni di ogni tipo
-        /*
+
         System.out.println(richiesta.getQueryString());
         System.out.println("Paramentro nome: " + strnome);
-        */
+
         System.out.println("1 "+richiesta.getContextPath());
         System.out.println("2 "+richiesta.getPathInfo());
         System.out.println("3 "+richiesta.getRequestURI());
@@ -63,11 +62,9 @@ public class GenericController {
         model.addAttribute("ris",risultato);
         return "pagina";
     }
+    */
 
-    @GetMapping("/catalogo")
-    public String cat(){
-        return "pagina";
-    }
+
 
     @GetMapping("/nuovo-piatto")
     public String getNuovoPiatto(){
@@ -88,6 +85,8 @@ public class GenericController {
         m.addAttribute("piatti", pastoService.getAll());
         return "menu";
     }
+
+
 
 
 
