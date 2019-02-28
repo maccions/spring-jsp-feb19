@@ -25,6 +25,8 @@ public class AppConfig implements WebMvcConfigurer {
     String suffix;
 
 
+
+
     @Override
     public void configurePathMatch(PathMatchConfigurer configurer) {
         configurer.setUseTrailingSlashMatch(false);

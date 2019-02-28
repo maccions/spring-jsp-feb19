@@ -35,4 +35,13 @@ public class PastoServiceImpl implements PastoService {
         }
         return false;
     }
+
+
+    @Override
+    public List<Pasto> cerca(String nome) {
+        if (nome != null && nome.trim().length()>0){
+            return dealRepository.findByNome(nome);
+        }
+        return null;
+    }
 }//end class

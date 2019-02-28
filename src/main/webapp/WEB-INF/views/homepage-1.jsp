@@ -43,7 +43,7 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
-        <ul class="navbar-nav">
+        <ul class="navbar-nav ">
           <li class="nav-item">
             <a class="nav-link" href="/">Home</a>
           </li>
@@ -80,10 +80,18 @@
               <a class="dropdown-item" href="contact.html">Contact</a>
             </div>
           </li>
+          <!--
           <li class="nav-item btn-submit-recipe">
             <a class="nav-link" href="submit-recipes.html"><i class="fa fa-upload" aria-hidden="true"></i> Submit Recipe</a>
           </li>
+          -->
         </ul>
+
+        <form class="form-inline" method="get" action="/cerca">
+          <input type="text" name="testo" required placeholder="Cerca piatto" class="form-control ">
+        </form>
+
+
       </div>
     </div>
   </nav>

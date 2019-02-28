@@ -9,4 +9,5 @@ public interface PastoService {
     List<Pasto> getAll();
     public boolean salva(Pasto pasto);
 
+    List<Pasto> cerca(String nome);
 }//end class

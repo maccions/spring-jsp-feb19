@@ -5,14 +5,14 @@ import it.nextre.academy.springdemo.dto.Pasto;
 import it.nextre.academy.springdemo.service.PastoService;
 import it.nextre.academy.springdemo.service.TopDealService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.HttpServletRequest;
 
 
 @Controller
@@ -45,15 +45,29 @@ public class GenericController {
         return "homepage-2";
     }
 
-    @GetMapping("/dati")
-    public String getDati(Model model){
+    @GetMapping("/primo/dati")
+    public String getDati(Model model, HttpServletRequest richiesta, @RequestParam(name="nome", required = false) String strnome){
         //il model conterrà i dati da passare alla view
         //mille operazioni di ogni tipo
-        String risultato = "Ciao Mario Rossi";
+        /*
+        System.out.println(richiesta.getQueryString());
+        System.out.println("Paramentro nome: " + strnome);
+        */
+        System.out.println("1 "+richiesta.getContextPath());
+        System.out.println("2 "+richiesta.getPathInfo());
+        System.out.println("3 "+richiesta.getRequestURI());
+        System.out.println("4 "+richiesta.getServletPath());
+        System.out.println("5 "+richiesta.getMethod());
+        System.out.println("6 "+richiesta.getUserPrincipal());
+        String risultato = "Ciao "+strnome;
         model.addAttribute("ris",risultato);
         return "pagina";
     }
 
+    @GetMapping("/catalogo")
+    public String cat(){
+        return "pagina";
+    }
 
     @GetMapping("/nuovo-piatto")
     public String getNuovoPiatto(){
@@ -64,15 +78,17 @@ public class GenericController {
     public String salvaPiatto(@ModelAttribute("Pasto") Pasto p, BindingResult result, Model m){
         System.out.println("Salva-piatto : " + p);
         pastoService.salva(p);
-        m.addAttribute("piatti", pastoService.getAll());
-        return "menu";
+        //m.addAttribute("piatti", pastoService.getAll());
+        return "redirect:menu";
     }
+
 
     @GetMapping("/menu")
     public String salvaPiatto(Model m){
         m.addAttribute("piatti", pastoService.getAll());
         return "menu";
     }
+
 
 
 

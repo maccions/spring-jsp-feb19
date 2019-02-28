@@ -1,3 +1,6 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<c:set var="ctx" value="${pageContext.request.contextPath}"/>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +16,8 @@
 <p>Risultato: ${ris}</p>
 
 <div>
-    <img src="/res/img/vr.jpg" />
+    <%--<img src="${pageContext.request.ctx}/res/img/vr.jpg" />--%>
+    <img src="${ctx}/res/img/vr.jpg" />
 </div>
 
 <!--

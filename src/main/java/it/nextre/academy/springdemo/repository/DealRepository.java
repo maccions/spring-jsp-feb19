@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.OptionalInt;
+import java.util.stream.Collectors;
 
 @Repository
 public class DealRepository {
@@ -61,5 +62,11 @@ public class DealRepository {
         tmp.setDescrizione(pasto.getDescrizione());
         tmp.setImage(pasto.getImage());
         return true;
+    }
+
+    public List<Pasto> findByNome(String nome) {
+        return db.stream()
+                .filter(p->p.getTitolo().toLowerCase().contains(nome.trim().toLowerCase()))
+                .collect(Collectors.toList());
     }
 }//end class
