@@ -4,3 +4,4 @@
 <link href="${ctx}/res/css/bootstrap.min.css" rel="stylesheet">
 <link href="${ctx}/res/css/styles.css" rel="stylesheet">
 <link href="${ctx}/res/css/select2.min.css" rel="stylesheet">
+<link href="${ctx}/res/css/custom.css" rel="stylesheet">

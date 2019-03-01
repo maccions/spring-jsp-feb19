@@ -24,20 +24,23 @@
 <!-- qui dentro il contenuto della pagina  -->
 <div class="content">
 
-    <div class="page">
+    <div class="page menu">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-lg-12 title text-center">
+                <div class="col-lg-12 title">
                     <h1>Menu</h1>
                 </div>
                 <div class="col-lg-12">
-
-                    <c:forEach var="piatto" items="${piatti}">
-                        <div class="card">
-                            <p class="card-title">${piatto.titolo}</p>
-                            <p class="">${piatto.descrizione}</p>
+                    <div class="top">
+                        <c:forEach var="piatto" items="${piatti}">
+                        <div class="box clearfix">
+                            <%--<img src="${ctx}/res/img/...." alt="">--%>
+                            <img src="${piatto.image}" alt="anteprima">
+                            <h3>${piatto.titolo}</h3>
+                            <p>${piatto.descrizione}</p>
                         </div>
                     </c:forEach>
+                    </div>
                 </div>
             </div>
         </div>

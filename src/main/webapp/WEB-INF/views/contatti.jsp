@@ -18,7 +18,7 @@
     <div class="page">
         <div class="container">
             <div class="row">
-                <div class="col">
+                <div class="col title">
                     <h1>Contatti</h1>
                 </div>
             </div>
