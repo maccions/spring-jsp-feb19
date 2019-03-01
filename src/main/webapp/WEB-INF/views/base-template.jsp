@@ -3,23 +3,13 @@
 <c:set var="ctx" value="${pageContext.request.contextPath}"/>
 
 <%@ include file="parts/start.jsp" %>
-    <title>${titolo}</title>
-    <%@ include file="parts/css.jsp" %>
-    <%@ include file="parts/js_head.jsp" %>
-
+<title>${titolo} - </title>
+<%@ include file="parts/css.jsp" %>
+<%@ include file="parts/js_head.jsp" %>
 
 <%@ include file="parts/middle.jsp" %>
-
-
 <!-- navbar -->
 <%@ include file="parts/navbar.jsp" %>
-
-
-
-
-
-
-
 
 <!-- qui dentro il contenuto della pagina  -->
 <div class="content">
@@ -40,9 +30,5 @@
 
 <!-- JS -->
 <%@ include file="parts/js.jsp" %>
-
-
-
-
 
 <%@ include file="parts/end.jsp" %>

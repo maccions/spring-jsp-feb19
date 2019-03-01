@@ -25,7 +25,7 @@ public class GenericController {
     PastoService pastoService;
 
 
-    @GetMapping({"/","/index","/home"})
+    @GetMapping({"/","/index"})
     public String getHome(Model model){
 
         Pasto colazione, pranzo, cena;
@@ -38,6 +38,22 @@ public class GenericController {
         model.addAttribute("cena",cena);
 
         return "index";
+    }
+
+    @GetMapping("/menu")
+    public String getMenu(Model m){
+        m.addAttribute("piatti", pastoService.getAll());
+        return "menu";
+    }
+
+    @GetMapping("/servizi")
+    public String getServizi(){
+        return "servizi";
+    }
+
+    @GetMapping("/contatti")
+    public String getContatti(){
+        return "contatti";
     }
 
 
@@ -80,11 +96,7 @@ public class GenericController {
     }
 
 
-    @GetMapping("/menu")
-    public String salvaPiatto(Model m){
-        m.addAttribute("piatti", pastoService.getAll());
-        return "menu";
-    }
+
 
 
 

@@ -3,7 +3,7 @@
 <c:set var="ctx" value="${pageContext.request.contextPath}"/>
 
 <%@ include file="parts/start.jsp" %>
-    <title>NOME DEL SITO</title>
+    <title>${titolo} - Menu</title>
     <%@ include file="parts/css.jsp" %>
     <%@ include file="parts/js_head.jsp" %>
 

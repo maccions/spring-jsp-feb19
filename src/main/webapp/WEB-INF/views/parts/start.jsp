@@ -1,3 +1,5 @@
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<spring:eval expression="@environment.getProperty('site.title')" var="titolo" />
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,3 +13,7 @@
     <link rel="icon" href="${ctx}/res/images/cropped-logo-192x192.png" sizes="192x192" />
     <link rel="apple-touch-icon-precomposed" href="${ctx}/res/images/cropped-logo-180x180.png" />
     <meta name="msapplication-TileImage" content="${ctx}/res/images/cropped-logo-270x270.png" />
+
+
+
+
