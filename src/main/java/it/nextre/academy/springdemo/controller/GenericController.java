@@ -58,6 +58,28 @@ public class GenericController {
 
 
 
+    @GetMapping("/piatto")
+    public String getPiatto(Model model, @RequestParam("id") Integer idPiatto){
+        Pasto p = pastoService.getOne(idPiatto);
+        if (p==null){
+            //todo redirect 404
+        }
+        model.addAttribute("piatto",p);
+        return "piatto";
+    }
+
+    @GetMapping("/piatto/{id}")
+    public String getPiatto2(Model model, @PathVariable("id") Integer idPiatto){
+        Pasto p = pastoService.getOne(idPiatto);
+        if (p==null){
+            //todo redirect 404
+        }
+        model.addAttribute("piatto",p);
+        return "piatto";
+    }
+
+
+
 
     /*
     @GetMapping("/primo/dati")

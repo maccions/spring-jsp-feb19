@@ -18,7 +18,7 @@ public class DealRepository {
         db.add(new Pasto(2,"Pranzo Emiliano", "Affettati, mozzarelle, formaggi, pasta fatta in casa, tutto quello che puoi degustare in romagna lo trovi solo da noi con la stessa qualità!","https://img1.spiiky.com/events/B/58624_0_68d74d56d050404f893df4979329cc0c.jpg.ashx?format=jpg&quality=80&scale=both&mode=crop&maxwidth=735&maxheight=427&crop=(0,38,550,357)&bgcolor=F6F6F6"));
         db.add(new Pasto(3,"Cena smilza","Brodino di gallina e ravioli fatti in casa","https://www.fileni.it/contrib/uploads/2108_z_tortellini.jpg"));
 
-        db.add(new Pasto(3,"Pizza","Pizza alta o bassa, farcita o margherita, tradizionale o al gamut, scegli la pizza giusta per te. ","http://1.citynews-pisatoday.stgy.ovh/~media/original-hi/43579717813418/bufalina-al-solito-posto-2.jpg"));
+        db.add(new Pasto(4,"Pizza","Pizza alta o bassa, farcita o margherita, tradizionale o al gamut, scegli la pizza giusta per te. ","http://1.citynews-pisatoday.stgy.ovh/~media/original-hi/43579717813418/bufalina-al-solito-posto-2.jpg"));
 
     }
 

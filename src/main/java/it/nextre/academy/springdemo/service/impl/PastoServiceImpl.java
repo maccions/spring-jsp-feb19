@@ -44,4 +44,12 @@ public class PastoServiceImpl implements PastoService {
         }
         return null;
     }
+
+    @Override
+    public Pasto getOne(Integer id) {
+        if (id !=null && id > 0){
+            return dealRepository.getPasto(id);
+        }
+        return null;
+    }
 }//end class

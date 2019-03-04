@@ -36,8 +36,10 @@
                             <div class="box clearfix">
                                     <%--<img src="${ctx}/res/img/...." alt="">--%>
                                     <%--<img src="${piatto.image}" alt="anteprima">--%>
-                                <div style="background-image: url('${piatto.image}');" class="thumb"></div>
-                                <h3>${piatto.titolo}</h3>
+                                <a href="${ctx}/piatto/${piatto.id}">
+                                    <div style="background-image: url('${piatto.image}');" class="thumb"></div>
+                                </a>
+                                <h3><a href="${ctx}/piatto/${piatto.id}">${piatto.titolo}</a></h3>
                                 <p>${piatto.descrizione}</p>
                             </div>
                         </c:forEach>
