@@ -46,33 +46,33 @@
                 <div class="col-lg-4">
                     <h5><i class="fa fa-cutlery" aria-hidden="true"></i> Top Breakfast</h5>
                     <div class="box clearfix">
-                        <a href="recipe-detail.html">
+                        <a href="${ctx}/piatto?id=${colaz.id}">
                             <div style="background-image: url('${colaz.image}');" class="thumb"></div>
                             <!--<img src="${colaz.image}" alt="">-->
                         </a>
-                        <h3><a href="recipe-detail.html">${colaz.titolo}</a></h3>
+                        <h3><a href="${ctx}/piatto?id=${colaz.id}">${colaz.titolo}</a></h3>
                         <p>${colaz.descrizione}</p>
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <h5><i class="fa fa-cutlery" aria-hidden="true"></i> Top Lunch</h5>
                     <div class="box clearfix">
-                        <a href="recipe-detail.html">
+                        <a href="${ctx}/piatto?id=${pranzo.id}">
                             <div style="background-image: url('${pranzo.image}');" class="thumb"></div>
                             <%--<img src="${pranzo.image}" alt="">--%>
                         </a>
-                        <h3><a href="recipe-detail.html">${pranzo.titolo}</a></h3>
+                        <h3><a href="${ctx}/piatto?id=${pranzo.id}">${pranzo.titolo}</a></h3>
                         <p>${pranzo.descrizione}</p>
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <h5><i class="fa fa-cutlery" aria-hidden="true"></i> Top Dinner</h5>
                     <div class="box clearfix">
-                        <a href="recipe-detail.html">
+                        <a href="${ctx}/piatto?id=${cena.id}">
                             <div style="background-image: url('${cena.image}');" class="thumb"></div>
                             <%--<img src="${cena.image}" alt="">--%>
                         </a>
-                        <h3><a href="recipe-detail.html">${cena.titolo}</a></h3>
+                        <h3><a href="${ctx}/piatto?id=${cena.id}">${cena.titolo}</a></h3>
                         <p>${cena.descrizione}</p>
                     </div>
                 </div>

@@ -35,7 +35,8 @@
                         <c:forEach var="piatto" items="${piatti}">
                         <div class="box clearfix">
                             <%--<img src="${ctx}/res/img/...." alt="">--%>
-                            <img src="${piatto.image}" alt="anteprima">
+                            <%--<img src="${piatto.image}" alt="anteprima">--%>
+                            <div style="background-image: url('${piatto.image}');" class="thumb"></div>
                             <h3>${piatto.titolo}</h3>
                             <p>${piatto.descrizione}</p>
                         </div>
