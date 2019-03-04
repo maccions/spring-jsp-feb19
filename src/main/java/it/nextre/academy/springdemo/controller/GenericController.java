@@ -1,18 +1,14 @@
 package it.nextre.academy.springdemo.controller;
 
 
-import it.nextre.academy.springdemo.dto.Pasto;
+import it.nextre.academy.springdemo.entity.Pasto;
 import it.nextre.academy.springdemo.service.PastoService;
 import it.nextre.academy.springdemo.service.TopDealService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-
-import javax.servlet.http.HttpServletRequest;
 
 
 @Controller

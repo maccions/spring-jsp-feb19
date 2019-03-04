@@ -1,6 +1,6 @@
 package it.nextre.academy.springdemo.service.impl;
 
-import it.nextre.academy.springdemo.dto.Pasto;
+import it.nextre.academy.springdemo.entity.Pasto;
 import it.nextre.academy.springdemo.repository.DealRepository;
 import it.nextre.academy.springdemo.service.TopDealService;
 import org.springframework.beans.factory.annotation.Autowired;

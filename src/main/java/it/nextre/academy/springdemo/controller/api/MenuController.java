@@ -1,6 +1,6 @@
 package it.nextre.academy.springdemo.controller.api;
 
-import it.nextre.academy.springdemo.dto.Pasto;
+import it.nextre.academy.springdemo.entity.Pasto;
 import it.nextre.academy.springdemo.service.TopDealService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

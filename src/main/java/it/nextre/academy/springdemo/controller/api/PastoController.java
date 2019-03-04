@@ -1,11 +1,8 @@
 package it.nextre.academy.springdemo.controller.api;
 
-import it.nextre.academy.springdemo.dto.Pasto;
-import it.nextre.academy.springdemo.repository.DealRepository;
+import it.nextre.academy.springdemo.entity.Pasto;
 import it.nextre.academy.springdemo.service.PastoService;
-import it.nextre.academy.springdemo.service.TopDealService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpMethod;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

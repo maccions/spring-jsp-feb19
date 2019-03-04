@@ -1,6 +1,6 @@
 package it.nextre.academy.springdemo.service;
 
-import it.nextre.academy.springdemo.dto.Pasto;
+import it.nextre.academy.springdemo.entity.Pasto;
 
 public interface TopDealService {
     Pasto getTopBreakfast();

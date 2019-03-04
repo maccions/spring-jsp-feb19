@@ -1,7 +1,7 @@
 package it.nextre.academy.springdemo.controller;
 
 
-import it.nextre.academy.springdemo.dto.Pasto;
+import it.nextre.academy.springdemo.entity.Pasto;
 import it.nextre.academy.springdemo.service.PastoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
