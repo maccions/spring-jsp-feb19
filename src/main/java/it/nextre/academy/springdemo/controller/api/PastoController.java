@@ -23,13 +23,13 @@ public class PastoController {
 
     @PostMapping("/")
     public boolean addPasto(@RequestBody Pasto p) {
-        return pastoService.salva(p);
+        return pastoService.salva(p)!=null;
     }
 
     @PutMapping("/{valId}")
     public boolean editPasto(@RequestBody Pasto p, @PathVariable("valId") Integer id) {
         if (p.getId()==id)
-        return pastoService.salva(p);
+        return pastoService.salva(p)!=null;
         return false;
     }
 

@@ -10,5 +10,6 @@ import java.util.List;
 public interface PastoRepository extends JpaRepository<Pasto, Integer> {
 
     List<Pasto> findAllByTitolo(String titolo);
+    List<Pasto> findAllByTitoloContaining(String titolo);
 
 }//end class

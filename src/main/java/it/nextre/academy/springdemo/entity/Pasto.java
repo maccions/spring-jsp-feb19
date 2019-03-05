@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 
 @Data
 @AllArgsConstructor
@@ -16,8 +17,13 @@ public class Pasto {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     Integer id;
+
+    @NotEmpty
     String titolo;
+
     @Column(columnDefinition = "TEXT")
     String descrizione;
+
+
     String image;
 }//end class

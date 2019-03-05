@@ -16,7 +16,7 @@
 
 .page .top .box h3,
 .page .top .box p {
-    word-break: break-all;
+    word-break: break-word;
 }
 
 .page.result .top .box .thumb,

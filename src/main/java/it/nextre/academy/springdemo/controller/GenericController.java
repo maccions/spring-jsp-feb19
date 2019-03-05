@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 
 @Controller
@@ -106,10 +107,32 @@ public class GenericController {
     }
 
     @PostMapping("/salva-piatto")
-    public String salvaPiatto(@ModelAttribute("Pasto") Pasto p, BindingResult result, Model m){
+    public String salvaPiatto(@ModelAttribute("Pasto") Pasto p, @RequestParam(name="fimage", required = false) MultipartFile img , BindingResult result, Model m){
         System.out.println("Salva-piatto : " + p);
-        pastoService.salva(p);
-        //m.addAttribute("piatti", pastoService.getAll());
+        System.out.println("img size: " + img.getSize());
+        System.out.println("img contentType: " + img.getContentType());
+        System.out.println("img name: " + img.getName());
+        System.out.println("img OriginalFileName: " + img.getOriginalFilename());
+
+        if (result.hasErrors()){
+            //todo fare il ritorno alla pagina di inserimento con i dati inseriti dall'utente mostrando gli errori
+            return "redirect:nuovo-piatto";
+        }
+
+        //se ho immagine
+        if(img!=null && img.getSize()>0){
+            //salvo il piatto, se tutto va bene, salvo l'immaigine e aggiorno il piatto
+            p =  pastoService.salva(p);
+            if (p!=null && p.getId()>0){
+                //tutto è andato bene, quindi memorizzo l'immagine
+                pastoService.aggiornaImmagine(p,img);
+                //salvataggio fatto da metodo precedente
+            }
+        }else {
+            //altrimenti salvo il piatto senza immagine
+            pastoService.salva(p);
+        }
+        //m.addAttribute("piatti", pastoService.getAll()); // lo farà la rotta menu
         return "redirect:menu";
     }
 

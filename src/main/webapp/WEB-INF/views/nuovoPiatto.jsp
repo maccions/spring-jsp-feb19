@@ -32,7 +32,7 @@
                     <h1>Nuovo Piatto</h1>
                 </div>
                 <div class="col-lg-12">
-                    <form method="post" action="/salva-piatto"  >
+                    <form method="post" action="/salva-piatto" enctype="multipart/form-data" >
                         <div class="form-group">
                             <label for="txtnome">Nome</label>
                             <input type="text" class="form-control" id="txtnome" name="titolo" required value="" placeholder="...">
@@ -43,7 +43,7 @@
                         </div>
                         <div class="form-group">
                             <label for="txtimg">Immagine</label>
-                            <input type="text" class="form-control" id="txtimg" name="image" placeholder="...">
+                            <input type="file" class="form-control" id="txtimg" name="fimage" placeholder="...">
                         </div>
                         <button type="submit" class="btn btn-primary" >SALVA</button>
                     </form>
