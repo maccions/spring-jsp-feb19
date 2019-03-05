@@ -107,12 +107,17 @@ public class GenericController {
     }
 
     @PostMapping("/salva-piatto")
-    public String salvaPiatto(@ModelAttribute("Pasto") Pasto p, @RequestParam(name="fimage", required = false) MultipartFile img , BindingResult result, Model m){
-        System.out.println("Salva-piatto : " + p);
+    public String salvaPiatto(@ModelAttribute("Pasto") Pasto p, @RequestParam(name="fimage", required = false) MultipartFile img , @RequestParam(required = false, name = "cancella") Boolean cancella, BindingResult result, Model m){
+
+        System.out.println("Salva-piatto : " + p); //id null o number>0
+        System.out.println("Salva-piatto Cancella: " + cancella); //null o true
+        //if(true)return "redirect:menu";
+        /*
         System.out.println("img size: " + img.getSize());
         System.out.println("img contentType: " + img.getContentType());
         System.out.println("img name: " + img.getName());
         System.out.println("img OriginalFileName: " + img.getOriginalFilename());
+        */
 
         if (result.hasErrors()){
             //todo fare il ritorno alla pagina di inserimento con i dati inseriti dall'utente mostrando gli errori
@@ -121,7 +126,7 @@ public class GenericController {
 
         //se ho immagine
         if(img!=null && img.getSize()>0){
-            //salvo il piatto, se tutto va bene, salvo l'immaigine e aggiorno il piatto
+            //salvo il piatto(così da ottenere il nuovo ID x fare la cartella sull'HDD), se tutto va bene, salvo l'immagine e aggiorno il piatto
             p =  pastoService.salva(p);
             if (p!=null && p.getId()>0){
                 //tutto è andato bene, quindi memorizzo l'immagine
@@ -136,6 +141,19 @@ public class GenericController {
         return "redirect:menu";
     }
 
+
+
+    @GetMapping("/edit/piatto")
+    public String getEditPiatto(@RequestParam("id") Integer id, Model model){
+        if (id>0){
+            Pasto tmp = pastoService.getOne(id);
+            model.addAttribute("piatto",tmp);
+            model.addAttribute("modifica", true);
+            return "nuovoPiatto";
+        }
+        //todo page 404
+        return "redirect:menu";
+    }
 
 
 

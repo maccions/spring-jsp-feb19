@@ -82,21 +82,29 @@ public class PastoServiceImpl implements PastoService {
         if (pasto == null ) return null;
         if (immagine==null){
             //todo fare la rimozione
+            // cancellare immagine da HDD
+            //aggiornar eil record del pasto settando a null l'immagine e salvare
         }else{
             //procedere con la sostituzione sul disco del file e aggiornare l'oggetto Pasto su db
             if (fileService.isValidImage(immagine)){
                 System.out.println("IMMAGINE VALIDA");
-                Path toSave = Paths.get("." ,"src","main","webapp","WEB-INF","static","data",""+pasto.getId());
+                Path toSave = Paths.get("." ,"src","main","webapp","WEB-INF","static","data","portata",""+pasto.getId());
                 if (!toSave.toFile().exists()) {
                     if(!toSave.toFile().mkdirs()){
                         System.out.println("ERRORE CREAZIONE CARTELLA pasto ");
                     }
                 }
 
-                try(FileOutputStream fw = new FileOutputStream(toSave.toString()+File.separator+"piatto."+fileService.getFileExtension(new File(immagine.getOriginalFilename())))){
-                    fw.write(immagine.getBytes());
-                }catch (IOException e){
 
+                String filenameAnteprima = "piatto."+fileService.getFileExtension(new File(immagine.getOriginalFilename()));
+
+                try(FileOutputStream fw = new FileOutputStream(toSave.toString()+File.separator+filenameAnteprima)){
+                    fw.write(immagine.getBytes());
+                    pasto.setImage(Paths.get("data","portata",""+pasto.getId(),filenameAnteprima).toString());
+                    return pastoRepository.save(pasto);
+
+                }catch (IOException e){
+                    //todo fare qualcosa in caso di problemi
                 }
             }else{
                 System.out.println("IMMAGINE "+immagine.getOriginalFilename()+" NON VALIDA");

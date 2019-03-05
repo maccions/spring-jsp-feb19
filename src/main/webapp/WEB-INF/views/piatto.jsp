@@ -14,6 +14,12 @@
 <!-- qui dentro il contenuto della pagina -->
 <div class="content">
 
+    <div class="admin-area btn-group btn-group-lg justify-content-center d-flex mt-4" role="toolbar" aria-label="admin toolbar">
+        <a href="${ctx}/edit/piatto?id=${piatto.id}" class="btn btn-outline-info">MODIFICA</a>
+        <!-- todo fare prompt di conferma -->
+        <a href="${ctx}/delete/piatto?id=${piatto.id}" class="btn btn-outline-info">CANCELLA</a>
+    </div>
+
     <!-- recipe detail -->
     <div class="recipe-detail">
         <div class="container">
@@ -25,7 +31,7 @@
                 </div>
                 <!-- col sx -->
                 <div class="col-lg-6">
-                    <img src="${piatto.image}" alt="piatto">
+                    <img src="${ctx}/res/${piatto.imageURL}" alt="piatto">
 
 
                     <div class="info">

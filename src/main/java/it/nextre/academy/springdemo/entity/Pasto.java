@@ -26,4 +26,11 @@ public class Pasto {
 
 
     String image;
+
+
+    public String getImageURL(){
+        if(this.image!=null)
+        return this.image.replace("\\","/");
+        return null;
+    }
 }//end class

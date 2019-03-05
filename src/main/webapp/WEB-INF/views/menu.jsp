@@ -31,7 +31,7 @@
                                     <%--<img src="${ctx}/res/img/...." alt="">--%>
                                     <%--<img src="${piatto.image}" alt="anteprima">--%>
                                 <a href="${ctx}/piatto?id=${piatto.id}">
-                                    <div style="background-image: url('${piatto.image}');" class="thumb"></div>
+                                    <div style="background-image: url('${ctx}/res/${piatto.imageURL}');" class="thumb"></div>
                                 </a>
                                 <h3><a href="${ctx}/piatto?id=${piatto.id}">${piatto.titolo}</a></h3>
                                 <p>${piatto.descrizione}</p>

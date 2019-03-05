@@ -20,6 +20,12 @@
                 <li class="nav-item ${pagina.endsWith('/contatti') ? 'active' : ''}">
                     <a class="nav-link" href="${ctx}/contatti">Contatti</a>
                 </li>
+
+
+
+                <li class="nav-item ${pagina.endsWith('/nuovo-piatto') ? 'active' : ''}">
+                    <a class="nav-link" href="${ctx}/nuovo-piatto">Nuovo</a>
+                </li>
                 <!--
                 <li class="nav-item dropdown ">
                     <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Examples</a>
