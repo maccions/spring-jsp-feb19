@@ -82,8 +82,28 @@ public class PastoServiceImpl implements PastoService {
         if (pasto == null ) return null;
         if (immagine==null){
             //todo fare la rimozione
+            //recupero le info presenti su db per questo pasto
+            Pasto oldPasto = pastoRepository.getOne(pasto.getId());
             // cancellare immagine da HDD
-            //aggiornar eil record del pasto settando a null l'immagine e salvare
+
+            if(oldPasto.getImage()==null || oldPasto.getImage().length()==0)
+                return null;
+
+            Path toRemove = Paths.get("." ,"src","main","webapp","WEB-INF","static", oldPasto.getImage());
+            System.out.println(toRemove);
+            if(toRemove.toFile().exists()){
+                System.out.println("File Immagine Trovato");
+                //lo cancello
+                if(!toRemove.toFile().delete()){
+                    //lanciare eccezione
+                    System.out.println("Errore cancellazione vecchia immagine");
+                }
+                //setto l'immagine del pasto a null e la memorizzo
+                pasto.setImage(null);
+                return pastoRepository.save(pasto);
+            }
+            return null;
+            // aggiornare il record del pasto settando a null l'immagine e salvare
         }else{
             //procedere con la sostituzione sul disco del file e aggiornare l'oggetto Pasto su db
             if (fileService.isValidImage(immagine)){

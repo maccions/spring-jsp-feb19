@@ -109,8 +109,8 @@ public class GenericController {
     @PostMapping("/salva-piatto")
     public String salvaPiatto(@ModelAttribute("Pasto") Pasto p, @RequestParam(name="fimage", required = false) MultipartFile img , @RequestParam(required = false, name = "cancella") Boolean cancella, BindingResult result, Model m){
 
-        System.out.println("Salva-piatto : " + p); //id null o number>0
-        System.out.println("Salva-piatto Cancella: " + cancella); //null o true
+        System.out.println("Salva-piatto : " + p); // nuovo piatto id null o number>0
+        System.out.println("Salva-piatto Cancella: " + cancella); // null o true
         //if(true)return "redirect:menu";
         /*
         System.out.println("img size: " + img.getSize());
@@ -121,8 +121,20 @@ public class GenericController {
 
         if (result.hasErrors()){
             //todo fare il ritorno alla pagina di inserimento con i dati inseriti dall'utente mostrando gli errori
-            return "redirect:nuovo-piatto";
+            if (p.getId()!=null)
+                return "redirect:edit/piatto?id="+p.getId();
+            else
+                return "redirect:nuovo-piatto";
         }
+
+        //se sto modificando e voglio cancellare l'immagine
+        if (p.getId() != null && cancella==true){
+            pastoService.aggiornaImmagine(p, null);
+        }
+
+
+
+
 
         //se ho immagine
         if(img!=null && img.getSize()>0){
