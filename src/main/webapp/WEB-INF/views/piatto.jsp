@@ -14,11 +14,24 @@
 <!-- qui dentro il contenuto della pagina -->
 <div class="content">
 
+
+    <div class="row">
+        <div class="col">
+
     <div class="admin-area btn-group btn-group-lg justify-content-center d-flex mt-4" role="toolbar" aria-label="admin toolbar">
         <a href="${ctx}/edit/piatto?id=${piatto.id}" class="btn btn-outline-info">MODIFICA</a>
         <!-- todo fare prompt di conferma -->
-        <a href="${ctx}/delete/piatto?id=${piatto.id}" class="btn btn-outline-info">CANCELLA</a>
+        <button data-url="${ctx}/delete/piatto?id=${piatto.id}" class="btn btn-outline-info" onclick="conferma()" >CANCELLA</button>
     </div>
+
+        </div>
+    </div>
+
+
+
+
+
+
 
     <!-- recipe detail -->
     <div class="recipe-detail">
@@ -145,5 +158,13 @@
 
 <!-- JS -->
 <%@ include file="parts/js.jsp" %>
+
+<script>
+    function conferma(){
+        alert("ciao")
+    }
+</script>
+
+
 
 <%@ include file="parts/end.jsp" %>

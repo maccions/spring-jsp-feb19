@@ -1,6 +1,6 @@
 <c:set var="pagina" value="${requestScope['javax.servlet.forward.request_uri']}" />
 
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+<nav class="navbar navbar-expand-lg navbar-dark _fixed-top position-sticky">
     <div class="container-fluid justify-content-center">
         <a class="navbar-brand" href="${ctx}/"><img src="${ctx}/res/images/logo.png" alt="logo"><span>S&C</span></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
