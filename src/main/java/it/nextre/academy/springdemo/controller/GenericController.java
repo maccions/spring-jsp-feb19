@@ -127,8 +127,14 @@ public class GenericController {
                 return "redirect:nuovo-piatto";
         }
 
+
+        //aggiustare oggetto pasto con vecchio valore di img (non bindato automaticamente)
+        if(p.getId() != null){
+            p.setImage(pastoService.getOne(p.getId()).getImage());
+        }
+
         //se sto modificando e voglio cancellare l'immagine
-        if (p.getId() != null && cancella==true){
+        if (p.getId() != null && cancella!=null && cancella==true){
             pastoService.aggiornaImmagine(p, null);
         }
 

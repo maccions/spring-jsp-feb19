@@ -44,7 +44,8 @@ public class PastoServiceImpl implements PastoService {
             }
         }else{
             //modifica
-            if (pasto.getId()>0 && dealRepository.getPasto(pasto.getId())!=null){
+
+            if (pasto.getId()>0 && pastoRepository.getOne(pasto.getId())!=null){
                 //return dealRepository.aggiornaPasto(pasto);
                 return pastoRepository.save(pasto);
                 //return true;
@@ -81,23 +82,7 @@ public class PastoServiceImpl implements PastoService {
     public Pasto aggiornaImmagine(Pasto pasto, MultipartFile immagine) {
         if (pasto == null ) return null;
         if (immagine==null){
-            //todo fare la rimozione
-            //recupero le info presenti su db per questo pasto
-            Pasto oldPasto = pastoRepository.getOne(pasto.getId());
-            // cancellare immagine da HDD
-
-            if(oldPasto.getImage()==null || oldPasto.getImage().length()==0)
-                return null;
-
-            Path toRemove = Paths.get("." ,"src","main","webapp","WEB-INF","static", oldPasto.getImage());
-            System.out.println(toRemove);
-            if(toRemove.toFile().exists()){
-                System.out.println("File Immagine Trovato");
-                //lo cancello
-                if(!toRemove.toFile().delete()){
-                    //lanciare eccezione
-                    System.out.println("Errore cancellazione vecchia immagine");
-                }
+            if (cancellaImmagine(pasto)){
                 //setto l'immagine del pasto a null e la memorizzo
                 pasto.setImage(null);
                 return pastoRepository.save(pasto);
@@ -105,6 +90,8 @@ public class PastoServiceImpl implements PastoService {
             return null;
             // aggiornare il record del pasto settando a null l'immagine e salvare
         }else{
+
+
             //procedere con la sostituzione sul disco del file e aggiornare l'oggetto Pasto su db
             if (fileService.isValidImage(immagine)){
                 System.out.println("IMMAGINE VALIDA");
@@ -119,6 +106,10 @@ public class PastoServiceImpl implements PastoService {
                 String filenameAnteprima = "piatto."+fileService.getFileExtension(new File(immagine.getOriginalFilename()));
 
                 try(FileOutputStream fw = new FileOutputStream(toSave.toString()+File.separator+filenameAnteprima)){
+                    //prima di salvare cancello quella vecchia
+                    //recupero le info presenti su db per questo pasto
+                    cancellaImmagine(pasto);
+
                     fw.write(immagine.getBytes());
                     pasto.setImage(Paths.get("data","portata",""+pasto.getId(),filenameAnteprima).toString());
                     return pastoRepository.save(pasto);
@@ -132,4 +123,24 @@ public class PastoServiceImpl implements PastoService {
         }
         return null;
     }
+
+
+
+    private boolean cancellaImmagine(Pasto pasto){
+        //recupero le info presenti su db per questo pasto
+        Pasto oldPasto = pastoRepository.getOne(pasto.getId());
+        // cancellare immagine da HDD
+        if(oldPasto.getImage()==null || oldPasto.getImage().length()==0)
+            return false;
+        Path toRemove = Paths.get("." ,"src","main","webapp","WEB-INF","static", oldPasto.getImage());
+        //System.out.println(toRemove);
+        if(toRemove.toFile().exists()){
+            System.out.println("File Immagine Trovato");
+            //lo cancello
+            return toRemove.toFile().delete();
+        }
+        return false;
+    }
+
+
 }//end class
