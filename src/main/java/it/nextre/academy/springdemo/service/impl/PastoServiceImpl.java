@@ -130,7 +130,7 @@ public class PastoServiceImpl implements PastoService {
         //recupero le info presenti su db per questo pasto
         Pasto oldPasto = pastoRepository.getOne(pasto.getId());
         // cancellare immagine da HDD
-        if(oldPasto.getImage()==null || oldPasto.getImage().length()==0)
+        if(oldPasto==null || oldPasto.getImage()==null || oldPasto.getImage().length()==0)
             return false;
         Path toRemove = Paths.get("." ,"src","main","webapp","WEB-INF","static", oldPasto.getImage());
         //System.out.println(toRemove);
@@ -143,4 +143,15 @@ public class PastoServiceImpl implements PastoService {
     }
 
 
+    @Override
+    public void cancellaPastoById(Integer id) {
+        if (id!=null && id>0){
+            //controllo che esista, se esiste, cancello prima l'immagine e poi il record dal db
+            Pasto tmp=pastoRepository.getOne(id);
+            if(tmp!=null){
+                cancellaImmagine(tmp);
+                pastoRepository.delete(tmp);
+            }
+        }
+    }
 }//end class

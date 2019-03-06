@@ -122,9 +122,9 @@ public class GenericController {
         if (result.hasErrors()){
             //todo fare il ritorno alla pagina di inserimento con i dati inseriti dall'utente mostrando gli errori
             if (p.getId()!=null)
-                return "redirect:edit/piatto?id="+p.getId();
+                return "redirect:/piatto/edit?id="+p.getId();
             else
-                return "redirect:nuovo-piatto";
+                return "redirect:/nuovo-piatto";
         }
 
 
@@ -156,12 +156,12 @@ public class GenericController {
             pastoService.salva(p);
         }
         //m.addAttribute("piatti", pastoService.getAll()); // lo farà la rotta menu
-        return "redirect:menu";
+        return "redirect:/menu";
     }
 
 
 
-    @GetMapping("/edit/piatto")
+    @GetMapping("/piatto/edit")
     public String getEditPiatto(@RequestParam("id") Integer id, Model model){
         if (id>0){
             Pasto tmp = pastoService.getOne(id);
@@ -170,7 +170,16 @@ public class GenericController {
             return "nuovoPiatto";
         }
         //todo page 404
-        return "redirect:menu";
+        return "redirect:/menu";
+    }
+
+
+
+
+    @GetMapping("/piatto/delete")
+    public String getCancellaPiatto(@RequestParam("id") Integer id){
+        pastoService.cancellaPastoById(id);
+        return "redirect:/menu";
     }
 
 

@@ -14,4 +14,6 @@ public interface PastoService {
     List<Pasto> cerca(String nome);
 
     Pasto aggiornaImmagine(Pasto pasto, MultipartFile immagine);
+
+    void cancellaPastoById(Integer id);
 }//end class

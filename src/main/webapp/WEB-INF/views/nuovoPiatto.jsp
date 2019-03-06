@@ -32,7 +32,7 @@
                     </c:if>
                 </div>
                 <div class="col-lg-12">
-                    <form method="post" action="/salva-piatto" enctype="multipart/form-data">
+                    <form method="post" action="${ctx}/salva-piatto" enctype="multipart/form-data">
                         <input type="hidden" name="id" value="${piatto.id}"/>
                         <div class="form-group">
                             <label for="txtnome">Nome</label>

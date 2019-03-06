@@ -12,4 +12,11 @@ public interface PastoRepository extends JpaRepository<Pasto, Integer> {
     List<Pasto> findAllByTitolo(String titolo);
     List<Pasto> findAllByTitoloContaining(String titolo);
 
+    /*
+    @Override
+    void deleteById(Integer integer);
+
+    @Override
+    void delete(Pasto pasto);
+    */
 }//end class
