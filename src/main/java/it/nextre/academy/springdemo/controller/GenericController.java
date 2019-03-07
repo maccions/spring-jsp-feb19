@@ -11,6 +11,9 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 @Controller
 public class GenericController {
@@ -118,6 +121,7 @@ public class GenericController {
         System.out.println("img name: " + img.getName());
         System.out.println("img OriginalFileName: " + img.getOriginalFilename());
         */
+
 
         if (result.hasErrors()){
             //todo fare il ritorno alla pagina di inserimento con i dati inseriti dall'utente mostrando gli errori

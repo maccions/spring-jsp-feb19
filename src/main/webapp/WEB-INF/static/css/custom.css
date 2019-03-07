@@ -7,6 +7,26 @@ body{
     z-index:1030;
 }
 
+.navbar .form-inline input[type=text].form-control {
+    min-width: 350px;
+    background: #eee;
+
+    background: rgba(34,34,34,1);
+
+
+    outline:none;
+    /*background: none;*/
+    border-radius:0;
+    border:none;
+    color:#CCC;
+}
+
+.navbar .form-inline input[type=text].form-control:focus {
+    border:none;
+    box-shadow: none;
+    border-bottom:2px solid #AAA;
+    border-radius:0;
+}
 
 .page.menu .top,
 .page.result .top

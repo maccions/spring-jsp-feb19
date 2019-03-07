@@ -42,7 +42,7 @@
                 -->
             </ul>
             <form class="form-inline" method="get" action="${ctx}/cerca">
-                <input type="text" name="testo" required placeholder="Cerca piatto" class="form-control ">
+                <input type="text" name="testo" required placeholder="Cerca piatto" class="form-control " >
             </form>
         </div>
     </div>

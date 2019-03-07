@@ -14,7 +14,7 @@ import org.springframework.web.servlet.view.JstlView;
 
 
 @Configuration
-@EnableWebMvc
+@EnableWebMvc //abilita la validazione JSR 303
 @ComponentScan("it.nextre.academy.springdemo")
 public class AppConfig implements WebMvcConfigurer {
 

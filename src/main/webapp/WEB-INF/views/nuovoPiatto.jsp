@@ -1,5 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <c:set var="ctx" value="${pageContext.request.contextPath}"/>
 
@@ -32,15 +34,20 @@
                     </c:if>
                 </div>
                 <div class="col-lg-12">
-                    <form method="post" action="${ctx}/salva-piatto" enctype="multipart/form-data">
-                        <input type="hidden" name="id" value="${piatto.id}"/>
+                    <form:form method="post" action="${ctx}/salva-piatto" enctype="multipart/form-data" modelAttribute="piatto" >
+                        <form:input type="hidden" path="id" name="id" value="${piatto.id}"/>
                         <div class="form-group">
                             <label for="txtnome">Nome</label>
-                            <input type="text" class="form-control" id="txtnome" name="titolo" required value="${piatto.titolo}" placeholder="...">
+                            <form:input path="titolo" type="text" class="form-control" id="txtnome" name="titolo" required="required" value="${piatto.titolo}" placeholder="..." />
                         </div>
                         <div class="form-group">
                             <label for="txtdesc">Descrizione</label>
+                            <%--
                             <input type="text" class="form-control" id="txtdesc" name="descrizione" value="${piatto.descrizione}" placeholder="...">
+                            --%>
+                            <form:textarea path="descrizione" cssClass="form-control" id="txtdesc" value="${piatto.descrizione}"></form:textarea>
+
+
                         </div>
                         <div class="form-group">
                             <label for="txtimg">Immagine</label><br>
@@ -54,7 +61,7 @@
 
                         </div>
                         <button type="submit" class="btn btn-primary">SALVA</button>
-                    </form>
+                    </form:form>
                 </div>
             </div>
         </div>
