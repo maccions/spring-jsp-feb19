@@ -1,9 +1,13 @@
 package it.nextre.academy.springdemo.config;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.support.ResourceBundleMessageSource;
+import org.springframework.validation.Validator;
+import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.PathMatchConfigurer;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
@@ -52,6 +56,36 @@ public class AppConfig implements WebMvcConfigurer {
                 .resourceChain(false)  //enable in production mode
                 .addResolver(new PathResourceResolver());
     }
+
+
+
+
+
+/*
+//per internazionalizzare i messaggi di errore
+    @Bean
+    public MessageSource messageSource()
+    {
+        ResourceBundleMessageSource resource = new ResourceBundleMessageSource();
+        resource.setBasename("messages");
+        return resource;
+    }
+
+    @Override
+    public Validator getValidator()
+    {
+        return validator();
+    }
+    @Bean(name = "validator")
+    public LocalValidatorFactoryBean validator()
+    {
+        LocalValidatorFactoryBean bean = new LocalValidatorFactoryBean();
+        bean.setValidationMessageSource(messageSource());
+
+        return bean;
+    }
+*/
+
 
 
 

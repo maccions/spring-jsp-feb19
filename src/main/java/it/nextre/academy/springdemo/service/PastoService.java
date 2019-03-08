@@ -16,4 +16,6 @@ public interface PastoService {
     Pasto aggiornaImmagine(Pasto pasto, MultipartFile immagine);
 
     void cancellaPastoById(Integer id);
+
+    Pasto getOneRandom();
 }//end class

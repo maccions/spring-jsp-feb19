@@ -35,10 +35,19 @@
                 </div>
                 <div class="col-lg-12">
                     <form:form method="post" action="${ctx}/salva-piatto" enctype="multipart/form-data" modelAttribute="piatto" >
+
+                        <form:errors path="*" cssClass="text-danger text-center" element="div" />
+
+
                         <form:input type="hidden" path="id" name="id" value="${piatto.id}"/>
                         <div class="form-group">
                             <label for="txtnome">Nome</label>
+                            <form:input path="titolo" cssClass="form-control" id="txtnome" />
+                            <form:errors path="titolo" cssClass="text-danger" element="div" />
+
+                            <%--
                             <form:input path="titolo" type="text" class="form-control" id="txtnome" name="titolo" required="required" value="${piatto.titolo}" placeholder="..." />
+                                --%>
                         </div>
                         <div class="form-group">
                             <label for="txtdesc">Descrizione</label>

@@ -154,4 +154,10 @@ public class PastoServiceImpl implements PastoService {
             }
         }
     }
+
+
+    @Override
+    public Pasto getOneRandom() {
+        return pastoRepository.getOneRandom();
+    }
 }//end class
