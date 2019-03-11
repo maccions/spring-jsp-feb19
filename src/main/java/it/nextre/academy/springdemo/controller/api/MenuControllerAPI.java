@@ -12,7 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api")
-public class MenuController {
+public class MenuControllerAPI {
 
     @Autowired
     TopDealService topDealService;
