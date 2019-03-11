@@ -54,7 +54,7 @@ public class PastoController {
 
 
     //todo security
-    @GetMapping("/nuovo-piatto")
+    @GetMapping("/admin/nuovo-piatto")
     public String getNuovoPiatto(Model model){
         model.addAttribute("piatto",new Pasto());
         return "nuovoPiatto";
@@ -62,7 +62,7 @@ public class PastoController {
 
 
     //todo security
-    @PostMapping("/salva-piatto")
+    @PostMapping("/admin/salva-piatto")
     public String salvaPiatto(@Valid @ModelAttribute("piatto") Pasto p, BindingResult result, ModelMap model, @RequestParam(name="fimage", required = false) MultipartFile img , @RequestParam(required = false, name = "cancella") Boolean cancella, Model m){
 
         System.out.println("Salva-piatto : " + p); // nuovo piatto id null o number>0
@@ -121,7 +121,7 @@ public class PastoController {
 
 
     //todo security
-    @GetMapping("/piatto/edit")
+    @GetMapping("/admin/piatto/edit")
     public String getEditPiatto(@RequestParam("id") Integer id, Model model){
         if (id>0){
             Pasto tmp = pastoService.getOne(id);
@@ -136,7 +136,7 @@ public class PastoController {
 
 
     //todo security
-    @GetMapping("/piatto/delete")
+    @GetMapping("/admin/piatto/delete")
     public String getCancellaPiatto(@RequestParam("id") Integer id){
         pastoService.cancellaPastoById(id);
         return "redirect:/menu";

@@ -34,7 +34,7 @@
                     </c:if>
                 </div>
                 <div class="col-lg-12">
-                    <form:form method="post" action="${ctx}/salva-piatto" enctype="multipart/form-data" modelAttribute="piatto" >
+                    <form:form method="post" action="${ctx}/admin/salva-piatto" enctype="multipart/form-data" modelAttribute="piatto" >
 
                         <form:errors path="*" cssClass="text-danger text-center" element="div" />
 

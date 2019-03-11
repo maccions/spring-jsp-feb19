@@ -19,9 +19,9 @@
         <div class="col">
 
     <div class="admin-area btn-group btn-group-lg justify-content-center d-flex mt-4" role="toolbar" aria-label="admin toolbar">
-        <a href="${ctx}/piatto/edit?id=${piatto.id}" class="btn btn-outline-info">MODIFICA</a>
+        <a href="${ctx}/admin/piatto/edit?id=${piatto.id}" class="btn btn-outline-info">MODIFICA</a>
         <!-- todo fare prompt di conferma -->
-        <button data-url="${ctx}/piatto/delete?id=${piatto.id}" class="btn btn-outline-info" onclick="conferma(this)" >CANCELLA</button>
+        <button data-url="${ctx}/admin/piatto/delete?id=${piatto.id}" class="btn btn-outline-info" onclick="conferma(this)" >CANCELLA</button>
     </div>
 
         </div>
