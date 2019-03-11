@@ -4,6 +4,7 @@ package it.nextre.academy.springdemo.controller;
 import it.nextre.academy.springdemo.entity.Pasto;
 import it.nextre.academy.springdemo.service.PastoService;
 import it.nextre.academy.springdemo.service.TopDealService;
+import it.nextre.academy.springdemo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -62,6 +63,21 @@ public class GenericController {
     @GetMapping("/contatti")
     public String getContatti(){
         return "contatti";
+    }
+
+
+
+    /*
+    * DEMO PER UTENTE ADMIN
+    * */
+    @Autowired
+    UserService userService;
+
+
+    @GetMapping("/test")
+    public String doTest(){
+        userService.createAdmin();
+        return "servizi";
     }
 
 
