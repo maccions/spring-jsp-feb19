@@ -26,6 +26,14 @@
                 <li class="nav-item ${pagina.endsWith('/nuovo-piatto') ? 'active' : ''}">
                     <a class="nav-link" href="${ctx}/admin/nuovo-piatto">Nuovo</a>
                 </li>
+                <li class="nav-item">
+                        <sec:authorize access="!isAuthenticated()">
+                            <a href="${ctx}/login" class="nav-link">Login</a>
+                        </sec:authorize>
+                        <sec:authorize access="isAuthenticated()">
+                            <a href="${ctx}/logout" class="nav-link">Logout</a>
+                        </sec:authorize>
+                </li>
                 <!--
                 <li class="nav-item dropdown ">
                     <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Examples</a>

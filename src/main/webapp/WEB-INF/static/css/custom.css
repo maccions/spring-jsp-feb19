@@ -93,3 +93,20 @@ body{
     box-sizing:border-box;
 }
 
+
+
+
+
+.btn-rosso{
+    margin-top:8px;
+    padding:13px 24px 11px;
+    color:#fff;
+    border-radius:3px;
+    background-color:#e13b2b;
+}
+.btn-rosso:hover{color: #222;font-weight: bold;}
+.copyright{
+    font-size:1rem;
+    padding:20px 0;
+    background-color:#fff;
+}

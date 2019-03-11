@@ -46,7 +46,7 @@
 <div class="copyright">
     <div class="container">
         <div class="row">
-            <div class="col-lg-12">Made with <i class="fa fa-heart" aria-hidden="true"></i> &#8212; Copyright &copy; 2018 <a href="homepage-1.html">Steaks & Chops - Food Bootstrap Template</a>. All Rights Reserved.</div>
+            <div class="col-lg-12">Made with <i class="fa fa-heart" aria-hidden="true"></i> &#8212; Copyright &copy; 2018 <a href="${ctx}/">S&C - Nextre Engineering 2019</a>. All Rights Reserved.</div>
         </div>
     </div>
 </div>

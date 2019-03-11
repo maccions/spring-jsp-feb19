@@ -1,4 +1,5 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <spring:eval expression="@environment.getProperty('site.title')" var="titolo" />
 <!DOCTYPE html>
 <html>

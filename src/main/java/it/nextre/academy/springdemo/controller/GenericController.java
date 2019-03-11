@@ -29,7 +29,7 @@ public class GenericController {
 
     @GetMapping({"/","/index"})
     public String getHome(Model model){
-
+        model.addAttribute("titolo","Home");
         Pasto colazione, pranzo, cena;
         colazione = pastoService.getOneRandom();
         do{
@@ -50,21 +50,29 @@ public class GenericController {
     }
 
     @GetMapping("/menu")
-    public String getMenu(Model m){
-        m.addAttribute("piatti", pastoService.getAll());
+    public String getMenu(Model model){
+        model.addAttribute("titolo","Menu");
+        model.addAttribute("piatti", pastoService.getAll());
         return "menu";
     }
 
     @GetMapping("/servizi")
-    public String getServizi(){
+    public String getServizi(Model model){
+        model.addAttribute("titolo","Servizi");
         return "servizi";
     }
 
     @GetMapping("/contatti")
-    public String getContatti(){
+    public String getContatti(Model model){
+        model.addAttribute("titolo","Contatti");
         return "contatti";
     }
 
+    @GetMapping("/login")
+    public String getLogin(Model model){
+        model.addAttribute("titolo","Log-In");
+        return "login";
+    }
 
 
     /*

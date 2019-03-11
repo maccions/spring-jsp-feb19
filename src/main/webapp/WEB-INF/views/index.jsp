@@ -32,9 +32,9 @@
                     <h1>Steaks & Chops</h1>
                 </div>
             </div>
-            <div class="row">
+            <div class="row mb-4">
                 <div class="col text-center">
-                    <img src="https://cache.marriott.com/marriottassets/marriott/LONGH/longh-steakhouse-0100-hor-feat.jpg" alt="locale" class="img-fluid">
+                    <img src="https://cache.marriott.com/marriottassets/marriott/LONGH/longh-steakhouse-0100-hor-feat.jpg" alt="locale" class="img-fluid mb-4">
                 </div>
             </div>
         </div>
