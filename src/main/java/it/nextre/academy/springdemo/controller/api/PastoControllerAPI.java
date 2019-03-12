@@ -33,4 +33,9 @@ public class PastoControllerAPI {
         return false;
     }
 
+    @DeleteMapping("/{id}")
+    public void deletePasto(@PathVariable("id") Integer id){
+        //todo ragazzi completare
+    }
+
 }//end class

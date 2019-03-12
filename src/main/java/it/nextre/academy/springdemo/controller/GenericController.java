@@ -5,6 +5,8 @@ import it.nextre.academy.springdemo.entity.Pasto;
 import it.nextre.academy.springdemo.service.PastoService;
 import it.nextre.academy.springdemo.service.TopDealService;
 import it.nextre.academy.springdemo.service.UserService;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,6 +27,8 @@ public class GenericController {
 
     @Autowired
     PastoService pastoService;
+
+    private static final Logger log = LogManager.getLogger();
 
 
     @GetMapping({"/","/index"})
@@ -70,6 +74,14 @@ public class GenericController {
 
     @GetMapping("/login")
     public String getLogin(Model model){
+
+        log.trace("A TRACE Message");
+        log.debug("A DEBUG Message");
+        log.info("An INFO Message");
+        log.warn("A WARN Message");
+        log.error("An ERROR Message");
+
+
         model.addAttribute("titolo","Log-In");
         return "login";
     }
