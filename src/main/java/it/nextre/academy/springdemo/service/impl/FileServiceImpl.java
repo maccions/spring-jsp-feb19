@@ -1,6 +1,8 @@
 package it.nextre.academy.springdemo.service.impl;
 
 
+import org.apache.logging.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -14,6 +16,10 @@ import java.util.List;
 
 @Service
 public class FileServiceImpl {
+
+
+    @Autowired
+    Logger log;
 
 
     public List<String> getSupportedExtensions() {
@@ -43,6 +49,7 @@ public class FileServiceImpl {
     }
 
     public boolean isValidImage(MultipartFile img) {
+        log.debug("validazione immagine");
         //estensione ok
         String ext = getFileExtension(new File(img.getOriginalFilename())).toLowerCase();
         boolean isExtOk = getSupportedExtensions().contains(ext);

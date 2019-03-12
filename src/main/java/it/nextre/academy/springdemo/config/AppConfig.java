@@ -1,5 +1,7 @@
 package it.nextre.academy.springdemo.config;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
@@ -57,6 +59,11 @@ public class AppConfig implements WebMvcConfigurer {
                 .resourceChain(false)  //enable in production mode
                 .addResolver(new PathResourceResolver());
     }
+
+    @Bean
+    public Logger getLogger(){
+        return  LogManager.getLogger();
+    };
 
 
 

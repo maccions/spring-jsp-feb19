@@ -3,6 +3,7 @@ package it.nextre.academy.springdemo.controller;
 
 import it.nextre.academy.springdemo.entity.Pasto;
 import it.nextre.academy.springdemo.service.PastoService;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,11 +22,15 @@ public class PastoController {
     @Autowired
     PastoService pastoService;
 
+    @Autowired
+    Logger log;
+
     /*
      * esempio di passaggio parametri in get
      * */
     @GetMapping("/piatto")
     public String getPiatto(Model model, @RequestParam("id") Integer idPiatto){
+        log.debug("/piatto");
         Pasto p = pastoService.getOne(idPiatto);
         if (p==null){
             //todo redirect 404
@@ -39,6 +44,7 @@ public class PastoController {
      * */
     @GetMapping("/piatto/{id}")
     public String getPiatto2(Model model, @PathVariable("id") Integer idPiatto){
+        log.debug("/piatto/"+idPiatto);
         Pasto p = pastoService.getOne(idPiatto);
         if (p==null){
             //todo redirect 404
@@ -56,6 +62,7 @@ public class PastoController {
     //todo security
     @GetMapping("/admin/nuovo-piatto")
     public String getNuovoPiatto(Model model){
+        log.debug("/admin/nuovo-piatto");
         model.addAttribute("piatto",new Pasto());
         return "nuovoPiatto";
     }
@@ -64,6 +71,8 @@ public class PastoController {
     //todo security
     @PostMapping("/admin/salva-piatto")
     public String salvaPiatto(@Valid @ModelAttribute("piatto") Pasto p, BindingResult result, ModelMap model, @RequestParam(name="fimage", required = false) MultipartFile img , @RequestParam(required = false, name = "cancella") Boolean cancella, Model m){
+
+        log.debug("/admin/salva-piatto [POST]");
 
         System.out.println("Salva-piatto : " + p); // nuovo piatto id null o number>0
         System.out.println("Salva-piatto Cancella: " + cancella); // null o true
@@ -123,6 +132,7 @@ public class PastoController {
     //todo security
     @GetMapping("/admin/piatto/edit")
     public String getEditPiatto(@RequestParam("id") Integer id, Model model){
+        log.debug("/admin/piatto/edit");
         if (id>0){
             Pasto tmp = pastoService.getOne(id);
             model.addAttribute("piatto",tmp);
@@ -138,6 +148,7 @@ public class PastoController {
     //todo security
     @GetMapping("/admin/piatto/delete")
     public String getCancellaPiatto(@RequestParam("id") Integer id){
+        log.debug("/admin/piatto/delete");
         pastoService.cancellaPastoById(id);
         return "redirect:/menu";
     }

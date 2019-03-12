@@ -4,6 +4,7 @@ import it.nextre.academy.springdemo.entity.Pasto;
 import it.nextre.academy.springdemo.repository.DealRepository;
 import it.nextre.academy.springdemo.repository.PastoRepository;
 import it.nextre.academy.springdemo.service.PastoService;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -25,6 +26,9 @@ public class PastoServiceImpl implements PastoService {
 
     @Autowired
     FileServiceImpl fileService;
+
+    @Autowired
+    Logger log;
 
     @Override
     public List<Pasto> getAll() {

@@ -28,11 +28,15 @@ public class GenericController {
     @Autowired
     PastoService pastoService;
 
-    private static final Logger log = LogManager.getLogger();
+    //private static final Logger log = LogManager.getLogger();
+    @Autowired
+    Logger log;
+
 
 
     @GetMapping({"/","/index"})
     public String getHome(Model model){
+        log.debug("/index");
         model.addAttribute("titolo","Home");
         Pasto colazione, pranzo, cena;
         colazione = pastoService.getOneRandom();
@@ -55,6 +59,7 @@ public class GenericController {
 
     @GetMapping("/menu")
     public String getMenu(Model model){
+        log.debug("/menu");
         model.addAttribute("titolo","Menu");
         model.addAttribute("piatti", pastoService.getAll());
         return "menu";
@@ -62,12 +67,14 @@ public class GenericController {
 
     @GetMapping("/servizi")
     public String getServizi(Model model){
+        log.debug("/servizi");
         model.addAttribute("titolo","Servizi");
         return "servizi";
     }
 
     @GetMapping("/contatti")
     public String getContatti(Model model){
+        log.debug("/contatti");
         model.addAttribute("titolo","Contatti");
         return "contatti";
     }
@@ -75,11 +82,11 @@ public class GenericController {
     @GetMapping("/login")
     public String getLogin(Model model){
 
-        log.trace("A TRACE Message");
+        //log.trace("A TRACE Message");
         log.debug("A DEBUG Message");
-        log.info("An INFO Message");
-        log.warn("A WARN Message");
-        log.error("An ERROR Message");
+        //log.info("An INFO Message");
+        //log.warn("A WARN Message");
+        //log.error("An ERROR Message");
 
 
         model.addAttribute("titolo","Log-In");
@@ -96,6 +103,7 @@ public class GenericController {
 
     @GetMapping("/test")
     public String doTest(){
+        log.debug("/test");
         userService.createAdmin();
         return "servizi";
     }
