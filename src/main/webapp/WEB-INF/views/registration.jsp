@@ -20,44 +20,46 @@
 
         <div class="container">
             <div class="row">
-                <div class="col-md-6 col-md-offset-3">
+                <div class="col-md-6 offset-md-3 bg-gray">
 
                     <c:if test="${param.success!=null}">
                         <div class="alert alert-info">Utente registrato con successo</div>
                     </c:if>
 
-                    <h1>Registration</h1>
+                    <h1 class="my-4">Registrazione</h1>
                     <form:form action="${ctx}/registration" modelAttribute="user" method="post">
-                        <form:errors path="*" cssClass="text-danger text-center" element="div" />
+                        <!-- area degli errori -->
+                        <%--
+                        <form:errors path="*" cssClass="text-danger text-center" element="div" /> --%>
 
                         <div class="form-group">
-                            <label for="firstName" class="control-label">First name</label>
-                            <form:input path="firstName"  cssClass="form-control" id="firstName" />
+                            <label for="firstName" class="control-label">Nome</label>
+                            <form:input path="firstName"  cssClass="form-control" id="firstName" required="required" />
                             <form:errors path="firstName" cssClass="text-danger" element="p" />
                         </div>
 
                         <div class="form-group">
-                            <label for="lastName" class="control-label">Last name</label>
-                            <form:input path="lastName"  cssClass="form-control" id="lastName" />
+                            <label for="lastName" class="control-label">Cognome</label>
+                            <form:input path="lastName"  cssClass="form-control" id="lastName" required="required" />
                             <form:errors path="lastName" cssClass="text-danger" element="p" />
                         </div>
 
                         <div class="form-group">
                             <label for="email" class="control-label">Email</label>
-                            <form:input type="email" path="email"  cssClass="form-control" id="email" />
+                            <form:input type="email" path="email"  cssClass="form-control" id="email" required="required" />
                             <form:errors path="email" cssClass="text-danger" element="p" />
                         </div>
 
 
                         <div class="form-group">
                             <label for="password" class="control-label">Password</label>
-                            <form:password path="password"  cssClass="form-control" id="password" />
+                            <form:password path="password"  cssClass="form-control" id="password" required="required"/>
                             <form:errors path="password" cssClass="text-danger" element="p" />
                         </div>
 
                         <div class="form-group">
-                            <label for="confirmPassword" class="control-label">Confirm Password</label>
-                            <form:password path="confirmPassword"  cssClass="form-control" id="confirmPassword" />
+                            <label for="confirmPassword" class="control-label">Conferma Password</label>
+                            <form:password path="confirmPassword"  cssClass="form-control" id="confirmPassword" required="required" />
                             <form:errors path="confirmPassword" cssClass="text-danger" element="p" />
                         </div>
 
@@ -65,9 +67,12 @@
 
 
                         <div class="form-group">
-                            <label for="terms" class="control-label">Accetto i <a href="#">Termini e Privacy</a> per usare il servizio</label>
-                            <form:checkbox path="terms"  cssClass="form-control" id="terms" />
+                            <div class="form-check">
+                            <form:checkbox path="terms"  cssClass="form-check-input" id="terms" required="required" />
+                            <label for="terms" class="form-check-label">Accetto i <a href="#">Termini e Privacy</a> per usare il servizio</label>
+
                             <form:errors path="terms" cssClass="text-danger" element="p" />
+                            </div>
                         </div>
 
 
@@ -75,7 +80,7 @@
 
                         <div class="form-group">
                             <form:button type="submit" class="btn btn-primary">Registrati</form:button>
-                            <span>Già registrato? <a href="${ctx}/login">Login</a></span>
+                            <div class="mt-2">Già registrato? <a href="${ctx}/login">Login</a></div>
                         </div>
 
                     </form:form>

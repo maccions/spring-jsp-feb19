@@ -23,6 +23,11 @@
 
                     <form class="form-signin" method="post" action="/login">
                         <h2 class="form-signin-heading">Accesso</h2>
+
+                        <c:if test="${param.error!=null}">
+                            <div class="alert alert-danger">Dati non validi</div>
+                        </c:if>
+
                         <p>
                             <label for="username" class="sr-only">Email</label>
                             <input type="text" id="username" name="username" class="form-control" placeholder="Email"
@@ -36,6 +41,7 @@
                         </p>
                         <button class="btn btn-lg btn-block btn-rosso" type="submit">ACCEDI</button>
                     </form>
+                    <div class="text-center mt-4">Oppure <a href="${ctx}/registration">registrati</a> subito</div>
 
                 </div>
             </div>

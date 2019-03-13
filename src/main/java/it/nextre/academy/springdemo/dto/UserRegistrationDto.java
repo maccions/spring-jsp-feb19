@@ -6,23 +6,23 @@ import javax.validation.constraints.NotEmpty;
 
 public class UserRegistrationDto {
 
-    @NotEmpty
+    @NotEmpty(message = "Valore non valido")
     private String firstName;
 
-    @NotEmpty
+    @NotEmpty(message = "Valore non valido")
     private String lastName;
 
-    @NotEmpty
+    @NotEmpty(message = "Valore non valido")
     private String password;
 
-    @NotEmpty
+    @NotEmpty(message = "Valore non valido")
     private String confirmPassword;
 
-    @Email
-    @NotEmpty
+    @Email(message = "Formato non valido")
+    @NotEmpty(message = "Valore non valido")
     private String email;
 
-    @AssertTrue
+    @AssertTrue(message = "Consenso obbligatorio per continuare")
     private Boolean terms;
 
     public String getFirstName() {

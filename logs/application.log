@@ -221,3 +221,80 @@ org.apache.jasper.JasperException: /WEB-INF/views/registration.jsp (line: [27], 
 2019-03-13 10:39:49.052 [DEBUG] [it.nextre.academy.springdemo.config.AppConfig].getNuovoPiatto -> /admin/nuovo-piatto
 2019-03-13 10:40:23.357 [DEBUG] [it.nextre.academy.springdemo.config.AppConfig].getLogin -> A DEBUG Message
 2019-03-13 11:20:27.542 [WARN ] [com.zaxxer.hikari.pool.HikariPool].run -> HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=8m33s105ms584µs900ns).
+2019-03-13 11:38:26.818 [INFO ] [it.nextre.academy.springdemo.SpringDemoApplication].logStarting -> Starting SpringDemoApplication on DESKTOP-CBAIUK9 with PID 11736 (C:\Academy\academy5\spring-demo\target\classes started by Valerio in C:\Academy\academy5\spring-demo)
+2019-03-13 11:38:26.822 [DEBUG] [it.nextre.academy.springdemo.SpringDemoApplication].logStarting -> Running with Spring Boot v2.1.3.RELEASE, Spring v5.1.5.RELEASE
+2019-03-13 11:38:26.823 [INFO ] [it.nextre.academy.springdemo.SpringDemoApplication].logStartupProfileInfo -> The following profiles are active: prod
+2019-03-13 11:38:29.653 [INFO ] [o.s.boot.web.embedded.tomcat.TomcatWebServer].initialize -> Tomcat initialized with port(s): 80 (http)
+2019-03-13 11:38:33.895 [WARN ] [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration].openEntityManagerInViewInterceptor -> spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-03-13 11:38:34.644 [INFO ] [o.s.boot.web.embedded.tomcat.TomcatWebServer].start -> Tomcat started on port(s): 80 (http) with context path ''
+2019-03-13 11:38:34.647 [INFO ] [it.nextre.academy.springdemo.SpringDemoApplication].logStarted -> Started SpringDemoApplication in 8.212 seconds (JVM running for 8.754)
+2019-03-13 11:40:46.840 [DEBUG] [it.nextre.academy.springdemo.config.AppConfig].getLogin -> A DEBUG Message
+2019-03-13 11:41:10.372 [DEBUG] [it.nextre.academy.springdemo.config.AppConfig].getLogin -> A DEBUG Message
+2019-03-13 11:41:20.086 [DEBUG] [it.nextre.academy.springdemo.config.AppConfig].getLogin -> A DEBUG Message
+2019-03-13 11:41:47.493 [DEBUG] [it.nextre.academy.springdemo.config.AppConfig].registerUserAccount -> /login [POST]UserRegistrationDto{firstName='a', lastName='a', password='1', confirmPassword='1', email='a@a.it', terms=true}
+2019-03-13 11:41:47.726 [DEBUG] [it.nextre.academy.springdemo.config.AppConfig].save -> UserServiceImpl.save
+2019-03-13 11:41:47.997 [INFO ] [it.nextre.academy.springdemo.config.AppConfig].registerUserAccount -> Utente registrato correttamente
+2019-03-13 11:42:00.815 [DEBUG] [it.nextre.academy.springdemo.config.AppConfig].getLogin -> A DEBUG Message
+2019-03-13 11:46:20.714 [DEBUG] [it.nextre.academy.springdemo.config.AppConfig].registerUserAccount -> /login [POST]UserRegistrationDto{firstName='', lastName='aaaa', password='1', confirmPassword='1', email='a@a.it', terms=true}
+2019-03-13 11:46:20.733 [ERROR] [it.nextre.academy.springdemo.config.AppConfig].registerUserAccount -> Errore durante la registrazione: email già presente
+2019-03-13 11:49:11.530 [INFO ] [it.nextre.academy.springdemo.SpringDemoApplication].logStarting -> Starting SpringDemoApplication on DESKTOP-CBAIUK9 with PID 4592 (C:\Academy\academy5\spring-demo\target\classes started by Valerio in C:\Academy\academy5\spring-demo)
+2019-03-13 11:49:11.533 [DEBUG] [it.nextre.academy.springdemo.SpringDemoApplication].logStarting -> Running with Spring Boot v2.1.3.RELEASE, Spring v5.1.5.RELEASE
+2019-03-13 11:49:11.534 [INFO ] [it.nextre.academy.springdemo.SpringDemoApplication].logStartupProfileInfo -> The following profiles are active: prod
+2019-03-13 11:49:13.924 [INFO ] [o.s.boot.web.embedded.tomcat.TomcatWebServer].initialize -> Tomcat initialized with port(s): 80 (http)
+2019-03-13 11:49:17.459 [WARN ] [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration].openEntityManagerInViewInterceptor -> spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-03-13 11:49:18.101 [INFO ] [o.s.boot.web.embedded.tomcat.TomcatWebServer].start -> Tomcat started on port(s): 80 (http) with context path ''
+2019-03-13 11:49:18.104 [INFO ] [it.nextre.academy.springdemo.SpringDemoApplication].logStarted -> Started SpringDemoApplication in 6.947 seconds (JVM running for 7.477)
+2019-03-13 11:49:33.047 [DEBUG] [it.nextre.academy.springdemo.config.AppConfig].registerUserAccount -> /login [POST]UserRegistrationDto{firstName='', lastName='aaaa', password='1', confirmPassword='1', email='a@a.it', terms=true}
+2019-03-13 11:49:33.219 [ERROR] [it.nextre.academy.springdemo.config.AppConfig].registerUserAccount -> Errore durante la registrazione: email già presente
+2019-03-13 11:50:43.762 [DEBUG] [it.nextre.academy.springdemo.config.AppConfig].registerUserAccount -> /login [POST]UserRegistrationDto{firstName='', lastName='aaaa', password='1', confirmPassword='1', email='a@a.it', terms=true}
+2019-03-13 11:50:43.766 [ERROR] [it.nextre.academy.springdemo.config.AppConfig].registerUserAccount -> Errore durante la registrazione: email già presente
+2019-03-13 11:51:03.405 [DEBUG] [it.nextre.academy.springdemo.config.AppConfig].registerUserAccount -> /login [POST]UserRegistrationDto{firstName='', lastName='aaaa', password='1', confirmPassword='1', email='a@a.it', terms=true}
+2019-03-13 11:51:03.413 [ERROR] [it.nextre.academy.springdemo.config.AppConfig].registerUserAccount -> Errore durante la registrazione: email già presente
+2019-03-13 11:51:18.863 [DEBUG] [it.nextre.academy.springdemo.config.AppConfig].registerUserAccount -> /login [POST]UserRegistrationDto{firstName='', lastName='aaaa', password='1', confirmPassword='1', email='a@a.it', terms=true}
+2019-03-13 11:51:18.868 [ERROR] [it.nextre.academy.springdemo.config.AppConfig].registerUserAccount -> Errore durante la registrazione: email già presente
+2019-03-13 11:53:29.076 [DEBUG] [it.nextre.academy.springdemo.config.AppConfig].registerUserAccount -> /login [POST]UserRegistrationDto{firstName='', lastName='aaaa', password='1', confirmPassword='1', email='a@a.it', terms=true}
+2019-03-13 11:53:29.083 [ERROR] [it.nextre.academy.springdemo.config.AppConfig].registerUserAccount -> Errore durante la registrazione: email già presente
+2019-03-13 11:53:32.865 [DEBUG] [it.nextre.academy.springdemo.config.AppConfig].registerUserAccount -> /login [POST]UserRegistrationDto{firstName='', lastName='aaaa', password='1', confirmPassword='1', email='a@a.it', terms=true}
+2019-03-13 11:53:32.871 [ERROR] [it.nextre.academy.springdemo.config.AppConfig].registerUserAccount -> Errore durante la registrazione: email già presente
+2019-03-13 11:53:33.041 [DEBUG] [it.nextre.academy.springdemo.config.AppConfig].registerUserAccount -> /login [POST]UserRegistrationDto{firstName='', lastName='aaaa', password='1', confirmPassword='1', email='a@a.it', terms=true}
+2019-03-13 11:53:33.046 [ERROR] [it.nextre.academy.springdemo.config.AppConfig].registerUserAccount -> Errore durante la registrazione: email già presente
+2019-03-13 11:53:33.203 [DEBUG] [it.nextre.academy.springdemo.config.AppConfig].registerUserAccount -> /login [POST]UserRegistrationDto{firstName='', lastName='aaaa', password='1', confirmPassword='1', email='a@a.it', terms=true}
+2019-03-13 11:53:33.208 [ERROR] [it.nextre.academy.springdemo.config.AppConfig].registerUserAccount -> Errore durante la registrazione: email già presente
+2019-03-13 11:55:38.538 [DEBUG] [it.nextre.academy.springdemo.config.AppConfig].registerUserAccount -> /login [POST]UserRegistrationDto{firstName='', lastName='aaaa', password='1', confirmPassword='1', email='a@a.it', terms=true}
+2019-03-13 11:55:38.543 [ERROR] [it.nextre.academy.springdemo.config.AppConfig].registerUserAccount -> Errore durante la registrazione: email già presente
+2019-03-13 11:58:53.232 [DEBUG] [it.nextre.academy.springdemo.config.AppConfig].getLogin -> A DEBUG Message
+2019-03-13 11:59:25.983 [DEBUG] [it.nextre.academy.springdemo.config.AppConfig].registerUserAccount -> /login [POST]UserRegistrationDto{firstName='', lastName='a', password='1', confirmPassword='1', email='a@a.it', terms=true}
+2019-03-13 11:59:25.991 [ERROR] [it.nextre.academy.springdemo.config.AppConfig].registerUserAccount -> Errore durante la registrazione: email già presente
+2019-03-13 12:00:01.445 [DEBUG] [it.nextre.academy.springdemo.config.AppConfig].getLogin -> A DEBUG Message
+2019-03-13 12:00:14.561 [WARN ] [o.s.w.s.m.support.DefaultHandlerExceptionResolver].logException -> Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' not supported]
+2019-03-13 12:00:14.576 [DEBUG] [it.nextre.academy.springdemo.config.AppConfig].getLogin -> A DEBUG Message
+2019-03-13 12:04:20.314 [INFO ] [it.nextre.academy.springdemo.SpringDemoApplication].logStarting -> Starting SpringDemoApplication on DESKTOP-CBAIUK9 with PID 11660 (C:\Academy\academy5\spring-demo\target\classes started by Valerio in C:\Academy\academy5\spring-demo)
+2019-03-13 12:04:20.317 [DEBUG] [it.nextre.academy.springdemo.SpringDemoApplication].logStarting -> Running with Spring Boot v2.1.3.RELEASE, Spring v5.1.5.RELEASE
+2019-03-13 12:04:20.318 [INFO ] [it.nextre.academy.springdemo.SpringDemoApplication].logStartupProfileInfo -> The following profiles are active: prod
+2019-03-13 12:04:22.380 [INFO ] [o.s.boot.web.embedded.tomcat.TomcatWebServer].initialize -> Tomcat initialized with port(s): 80 (http)
+2019-03-13 12:04:26.206 [WARN ] [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration].openEntityManagerInViewInterceptor -> spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-03-13 12:04:27.003 [INFO ] [o.s.boot.web.embedded.tomcat.TomcatWebServer].start -> Tomcat started on port(s): 80 (http) with context path ''
+2019-03-13 12:04:27.005 [INFO ] [it.nextre.academy.springdemo.SpringDemoApplication].logStarted -> Started SpringDemoApplication in 7.048 seconds (JVM running for 7.571)
+2019-03-13 12:04:43.869 [WARN ] [o.s.w.s.m.support.DefaultHandlerExceptionResolver].logException -> Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' not supported]
+2019-03-13 12:04:43.922 [DEBUG] [it.nextre.academy.springdemo.config.AppConfig].getLogin -> A DEBUG Message
+2019-03-13 12:05:01.644 [DEBUG] [it.nextre.academy.springdemo.config.AppConfig].getLogin -> A DEBUG Message
+2019-03-13 12:05:16.771 [DEBUG] [it.nextre.academy.springdemo.config.AppConfig].getLogin -> A DEBUG Message
+2019-03-13 12:08:03.772 [INFO ] [it.nextre.academy.springdemo.SpringDemoApplication].logStarting -> Starting SpringDemoApplication on DESKTOP-CBAIUK9 with PID 16484 (C:\Academy\academy5\spring-demo\target\classes started by Valerio in C:\Academy\academy5\spring-demo)
+2019-03-13 12:08:03.776 [DEBUG] [it.nextre.academy.springdemo.SpringDemoApplication].logStarting -> Running with Spring Boot v2.1.3.RELEASE, Spring v5.1.5.RELEASE
+2019-03-13 12:08:03.776 [INFO ] [it.nextre.academy.springdemo.SpringDemoApplication].logStartupProfileInfo -> The following profiles are active: prod
+2019-03-13 12:08:05.861 [INFO ] [o.s.boot.web.embedded.tomcat.TomcatWebServer].initialize -> Tomcat initialized with port(s): 80 (http)
+2019-03-13 12:08:10.219 [WARN ] [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration].openEntityManagerInViewInterceptor -> spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-03-13 12:08:11.066 [INFO ] [o.s.boot.web.embedded.tomcat.TomcatWebServer].start -> Tomcat started on port(s): 80 (http) with context path ''
+2019-03-13 12:08:11.071 [INFO ] [it.nextre.academy.springdemo.SpringDemoApplication].logStarted -> Started SpringDemoApplication in 7.683 seconds (JVM running for 8.228)
+2019-03-13 12:11:09.991 [DEBUG] [it.nextre.academy.springdemo.config.AppConfig].getLogin -> A DEBUG Message
+2019-03-13 12:11:19.152 [DEBUG] [it.nextre.academy.springdemo.config.AppConfig].getLogin -> A DEBUG Message
+2019-03-13 12:12:21.437 [INFO ] [it.nextre.academy.springdemo.SpringDemoApplication].logStarting -> Starting SpringDemoApplication on DESKTOP-CBAIUK9 with PID 12280 (C:\Academy\academy5\spring-demo\target\classes started by Valerio in C:\Academy\academy5\spring-demo)
+2019-03-13 12:12:21.441 [DEBUG] [it.nextre.academy.springdemo.SpringDemoApplication].logStarting -> Running with Spring Boot v2.1.3.RELEASE, Spring v5.1.5.RELEASE
+2019-03-13 12:12:21.441 [INFO ] [it.nextre.academy.springdemo.SpringDemoApplication].logStartupProfileInfo -> The following profiles are active: prod
+2019-03-13 12:12:23.638 [INFO ] [o.s.boot.web.embedded.tomcat.TomcatWebServer].initialize -> Tomcat initialized with port(s): 80 (http)
+2019-03-13 12:12:27.599 [WARN ] [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration].openEntityManagerInViewInterceptor -> spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-03-13 12:12:28.305 [INFO ] [o.s.boot.web.embedded.tomcat.TomcatWebServer].start -> Tomcat started on port(s): 80 (http) with context path ''
+2019-03-13 12:12:28.307 [INFO ] [it.nextre.academy.springdemo.SpringDemoApplication].logStarted -> Started SpringDemoApplication in 7.262 seconds (JVM running for 7.826)
+2019-03-13 12:12:46.501 [DEBUG] [it.nextre.academy.springdemo.config.AppConfig].getLogin -> A DEBUG Message
+2019-03-13 12:12:55.556 [DEBUG] [it.nextre.academy.springdemo.config.AppConfig].getLogin -> A DEBUG Message
+2019-03-13 12:13:00.721 [DEBUG] [it.nextre.academy.springdemo.config.AppConfig].getLogin -> A DEBUG Message

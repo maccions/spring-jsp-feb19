@@ -32,7 +32,7 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
                 .and()
                 .formLogin()
                 .loginPage("/login") //custom page
-                .failureForwardUrl("/login?error=true")
+                .failureUrl("/login?error")
                 .defaultSuccessUrl("/menu",false)
                 .permitAll()
                 .and()

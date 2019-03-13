@@ -26,7 +26,7 @@
                 <li class="nav-item ${pagina.endsWith('/nuovo-piatto') ? 'active' : ''}">
                     <a class="nav-link" href="${ctx}/admin/nuovo-piatto">Nuovo</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item ${pagina.endsWith('/login') ? 'active' : ''} ${pagina.endsWith('/registration') ? 'active' : ''}">
                         <sec:authorize access="!isAuthenticated()">
                             <a href="${ctx}/login" class="nav-link">Login</a>
                         </sec:authorize>
