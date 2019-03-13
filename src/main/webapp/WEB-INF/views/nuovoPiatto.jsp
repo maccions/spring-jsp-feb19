@@ -44,7 +44,6 @@
                             <label for="txtnome">Nome</label>
                             <form:input path="titolo" cssClass="form-control" id="txtnome" />
                             <form:errors path="titolo" cssClass="text-danger" element="div" />
-
                             <%--
                             <form:input path="titolo" type="text" class="form-control" id="txtnome" name="titolo" required="required" value="${piatto.titolo}" placeholder="..." />
                                 --%>

@@ -26,8 +26,8 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
                 .antMatchers("/res/**").permitAll()
                 //rotte per pagine
                 .antMatchers("/", "/index", "/menu", "/servizi", "/contatti", "/piatto", "/piatto/*", "/cerca","/test").permitAll()
+                .antMatchers("/login*","/registration").permitAll()
                 .antMatchers("/admin/**").hasRole("ADMIN")
-                .antMatchers("/login*").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()

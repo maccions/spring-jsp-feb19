@@ -1,9 +1,11 @@
 package it.nextre.academy.springdemo.service.impl;
 
+import it.nextre.academy.springdemo.dto.UserRegistrationDto;
 import it.nextre.academy.springdemo.entity.Role;
 import it.nextre.academy.springdemo.entity.User;
 import it.nextre.academy.springdemo.repository.UserRepository;
 import it.nextre.academy.springdemo.service.UserService;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -26,12 +28,16 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
+    @Autowired
+    private Logger log;
+
     public User findByEmail(String email) {
         return userRepository.findByEmail(email);
     }
 
-    /*
+
     public User save(UserRegistrationDto registration) {
+        log.debug("UserServiceImpl.save");
         User user = new User();
         user.setFirstName(registration.getFirstName());
         user.setLastName(registration.getLastName());
@@ -40,7 +46,7 @@ public class UserServiceImpl implements UserService {
         user.setRoles(Arrays.asList(new Role("ROLE_USER")));
         return userRepository.save(user);
     }
-    */
+
 
 
     public User createAdmin(){
