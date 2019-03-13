@@ -298,3 +298,9 @@ org.apache.jasper.JasperException: /WEB-INF/views/registration.jsp (line: [27], 
 2019-03-13 12:12:46.501 [DEBUG] [it.nextre.academy.springdemo.config.AppConfig].getLogin -> A DEBUG Message
 2019-03-13 12:12:55.556 [DEBUG] [it.nextre.academy.springdemo.config.AppConfig].getLogin -> A DEBUG Message
 2019-03-13 12:13:00.721 [DEBUG] [it.nextre.academy.springdemo.config.AppConfig].getLogin -> A DEBUG Message
+2019-03-13 12:17:46.820 [DEBUG] [it.nextre.academy.springdemo.config.AppConfig].getLogin -> A DEBUG Message
+2019-03-13 12:17:59.871 [DEBUG] [it.nextre.academy.springdemo.config.AppConfig].getMenu -> /menu
+2019-03-13 12:18:06.111 [DEBUG] [it.nextre.academy.springdemo.config.AppConfig].getLogin -> A DEBUG Message
+2019-03-13 12:18:11.273 [DEBUG] [it.nextre.academy.springdemo.config.AppConfig].getMenu -> /menu
+2019-03-13 12:18:12.694 [DEBUG] [it.nextre.academy.springdemo.config.AppConfig].getNuovoPiatto -> /admin/nuovo-piatto
+2019-03-13 12:18:20.938 [DEBUG] [it.nextre.academy.springdemo.config.AppConfig].getLogin -> A DEBUG Message

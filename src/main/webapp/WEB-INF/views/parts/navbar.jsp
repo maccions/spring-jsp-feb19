@@ -21,11 +21,12 @@
                     <a class="nav-link" href="${ctx}/contatti">Contatti</a>
                 </li>
 
-
-
+                <%-- un ruolo tra tutti quelli indicati --%>
+                <sec:authorize access="hasAnyRole('ADMIN')">
                 <li class="nav-item ${pagina.endsWith('/nuovo-piatto') ? 'active' : ''}">
                     <a class="nav-link" href="${ctx}/admin/nuovo-piatto">Nuovo</a>
                 </li>
+                </sec:authorize>
                 <li class="nav-item ${pagina.endsWith('/login') ? 'active' : ''} ${pagina.endsWith('/registration') ? 'active' : ''}">
                         <sec:authorize access="!isAuthenticated()">
                             <a href="${ctx}/login" class="nav-link">Login</a>
