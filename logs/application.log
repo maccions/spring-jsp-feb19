@@ -304,3 +304,14 @@ org.apache.jasper.JasperException: /WEB-INF/views/registration.jsp (line: [27], 
 2019-03-13 12:18:11.273 [DEBUG] [it.nextre.academy.springdemo.config.AppConfig].getMenu -> /menu
 2019-03-13 12:18:12.694 [DEBUG] [it.nextre.academy.springdemo.config.AppConfig].getNuovoPiatto -> /admin/nuovo-piatto
 2019-03-13 12:18:20.938 [DEBUG] [it.nextre.academy.springdemo.config.AppConfig].getLogin -> A DEBUG Message
+2019-03-13 12:45:21.015 [INFO ] [it.nextre.academy.springdemo.SpringDemoApplication].logStarting -> Starting SpringDemoApplication on DESKTOP-CBAIUK9 with PID 22204 (C:\Academy\academy5\spring-demo\target\classes started by Valerio in C:\Academy\academy5\spring-demo)
+2019-03-13 12:45:21.020 [DEBUG] [it.nextre.academy.springdemo.SpringDemoApplication].logStarting -> Running with Spring Boot v2.1.3.RELEASE, Spring v5.1.5.RELEASE
+2019-03-13 12:45:21.020 [INFO ] [it.nextre.academy.springdemo.SpringDemoApplication].logStartupProfileInfo -> The following profiles are active: prod
+2019-03-13 12:45:23.475 [INFO ] [o.s.boot.web.embedded.tomcat.TomcatWebServer].initialize -> Tomcat initialized with port(s): 80 (http)
+2019-03-13 12:45:27.503 [WARN ] [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration].openEntityManagerInViewInterceptor -> spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-03-13 12:45:28.347 [INFO ] [o.s.boot.web.embedded.tomcat.TomcatWebServer].start -> Tomcat started on port(s): 80 (http) with context path '/ristorante'
+2019-03-13 12:45:28.351 [INFO ] [it.nextre.academy.springdemo.SpringDemoApplication].logStarted -> Started SpringDemoApplication in 7.721 seconds (JVM running for 8.303)
+2019-03-13 12:46:10.252 [DEBUG] [it.nextre.academy.springdemo.config.AppConfig].getHome -> /index
+2019-03-13 12:46:13.119 [DEBUG] [it.nextre.academy.springdemo.config.AppConfig].getLogin -> A DEBUG Message
+2019-03-13 12:46:20.852 [DEBUG] [it.nextre.academy.springdemo.config.AppConfig].getMenu -> /menu
+2019-03-13 12:46:23.354 [DEBUG] [it.nextre.academy.springdemo.config.AppConfig].getLogin -> A DEBUG Message

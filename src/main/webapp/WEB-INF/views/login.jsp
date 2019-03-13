@@ -21,7 +21,14 @@
             <div class="row justify-content-center">
                 <div class="col-4">
 
-                    <form class="form-signin" method="post" action="/login">
+
+
+
+                    <%-- versione ctx --%>
+                    <%-- <form class="form-signin" method="post" action="${ctx}/login"> --%>
+                        <%-- versione spring:url autocontext --%>
+                     <form class="form-signin" method="post" action="<spring:url value="/login" />" >
+
                         <h2 class="form-signin-heading">Accesso</h2>
 
                         <c:if test="${param.error!=null}">
