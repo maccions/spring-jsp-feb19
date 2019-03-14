@@ -1,6 +1,8 @@
 package it.nextre.academy.springdemo.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -32,11 +34,13 @@ public class Pasto extends BaseEntity {
     @Column(columnDefinition = "TEXT")
     String descrizione;
 
+    @JsonIgnore
     @Size(min=5,max = 255, message = "immagine non valida")
     String image;
 
 
 
+    @JsonProperty("immagine")
     public String getImageURL(){
         if(this.image!=null)
         return this.image.replace("\\","/");

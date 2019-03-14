@@ -101,13 +101,19 @@ public class GenericController {
     UserService userService;
 
 
-    @GetMapping("/test")
-    public String doTest(){
-        log.debug("/test");
+    @GetMapping("/crea-admin")
+    public String doCreaAdmin(){
+        log.debug("/crea-admin");
         userService.createAdmin();
-        return "servizi";
+        return "/login";
     }
 
+
+
+    @GetMapping("/test")
+    public String doPage(){
+        return "testAPI";
+    }
 
 
 

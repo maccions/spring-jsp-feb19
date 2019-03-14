@@ -25,7 +25,7 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
                 //per rendere pubblici i file statici rendendole tutte richieste autorizzate
                 .antMatchers("/res/**").permitAll()
                 //rotte per pagine
-                .antMatchers("/", "/index", "/menu", "/servizi", "/contatti", "/piatto", "/piatto/*", "/cerca","/test").permitAll()
+                .antMatchers("/", "/index", "/menu", "/servizi", "/contatti", "/piatto", "/piatto/*", "/cerca","/test", "/api/**").permitAll()
                 .antMatchers("/login*","/registration").permitAll()
                 .antMatchers("/admin/**").hasRole("ADMIN")
                 .anyRequest().authenticated()
