@@ -63,7 +63,7 @@ public class UserRegistrationController {
         if (tmp!=null)
         log.info("Utente registrato correttamente");
 
-        return "redirect:/registration?success";
+        return "redirect:/login?success";
     }
 
 

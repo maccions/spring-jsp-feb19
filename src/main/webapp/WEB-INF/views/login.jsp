@@ -34,6 +34,9 @@
                         <c:if test="${param.error!=null}">
                             <div class="alert alert-danger">Dati non validi</div>
                         </c:if>
+                        <c:if test="${param.success!=null}">
+                            <div class="alert alert-info">Utente registrato con successo</div>
+                        </c:if>
 
                         <p>
                             <label for="username" class="sr-only">Email</label>

@@ -36,12 +36,31 @@
     const box = document.getElementById("result");
     var ctx = "${ctx}";
 
+    function creaNodoMenu(piatto) {
+        let piattoCont = document.createElement("div");
+        let descrizione = document.createElement("p");
+        piattoCont.classList = "box clearfix";
+
+        descrizione.innerText = piatto.descrizione;
+        piattoCont.appendChild(descrizione);
+
+        return piattoCont;
+    }
+
     fetch(ctx + "/api/menu",{method:"GET"})
         .then(risp => risp.json())
         .then(res => {
+            console.log(res);
+            for (item of res){
+                console.log(item.titolo)                
+                box.appendChild( creaNodoMenu(item) )
+            }
+
+            /*
                 let tits = new Array();
                 res.map(e=>tits.push(e.titolo))
                 box.innerHTML = tits;
+             */
         })
     .catch(err=>console.error(err))
 

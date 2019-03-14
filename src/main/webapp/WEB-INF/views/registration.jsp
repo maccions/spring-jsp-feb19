@@ -22,9 +22,7 @@
             <div class="row">
                 <div class="col-md-6 offset-md-3 bg-gray">
 
-                    <c:if test="${param.success!=null}">
-                        <div class="alert alert-info">Utente registrato con successo</div>
-                    </c:if>
+
 
                     <h1 class="my-4">Registrazione</h1>
                     <form:form action="${ctx}/registration" modelAttribute="user" method="post">
