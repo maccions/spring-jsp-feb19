@@ -13,12 +13,14 @@
 
 <!-- qui dentro il contenuto della pagina -->
 <div class="content">
-    <div class="page">
+    <div class="page menu">
 
         <div class="container">
-            <div id="result">
+            <div class="top">
+                <div id="result">
 
-            </div>
+                </div>
+        </div>
         </div>
     </div>
 </div>
@@ -39,9 +41,26 @@
     function creaNodoMenu(piatto) {
         let piattoCont = document.createElement("div");
         let descrizione = document.createElement("p");
-        piattoCont.classList = "box clearfix";
+        let a_img = document.createElement("a"); 
+        let div_img = document.createElement("div");
+        let titolo = document.createElement("h3");
+        let a_titolo = document.createElement("a");
 
+        piattoCont.classList = "box clearfix"
+        a_img.setAttribute("href", ctx+"/piatto?id="+piatto.id)
+        div_img.classList.add("thumb")
+        div_img.setAttribute("style","background-image: url('"+ctx+"/res/"+piatto.immagine+"');")
+        a_titolo.setAttribute("href", ctx+"/piatto?id="+piatto.id)
+        a_titolo.innerText=piatto.titolo
         descrizione.innerText = piatto.descrizione;
+
+
+
+
+        a_img.appendChild(div_img);
+        titolo.appendChild(a_titolo);        
+        piattoCont.appendChild(a_img);
+        piattoCont.appendChild(titolo);
         piattoCont.appendChild(descrizione);
 
         return piattoCont;

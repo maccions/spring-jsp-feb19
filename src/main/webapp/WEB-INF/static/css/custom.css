@@ -61,7 +61,11 @@ body{
 }
 
 
-
+@media only screen and (max-width: 768px) {
+    .top .box h3, .top .box p {
+        padding-left: 120px;
+    }
+}
 
 
 
