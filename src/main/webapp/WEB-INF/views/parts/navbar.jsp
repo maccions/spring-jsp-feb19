@@ -7,6 +7,19 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
+            <sec:authorize var="loggedIn" access="isAuthenticated()" />
+            <c:choose>
+            <c:when test="${loggedIn}">
+            <ul class="navbar-nav justify-content-center ml-auto">
+                <li class="nav-item">
+                    Ciao
+                    <sec:authentication property="principal.firstName" />
+                </li>
+            </ul>
+            </c:when>
+                <c:otherwise>
+                </c:otherwise>
+            </c:choose>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item ${pagina.endsWith('/') ? 'active' : ''} ${pagina.endsWith('/index') ? 'active' : ''}">
                     <a class="nav-link" href="${ctx}/">Home</a>

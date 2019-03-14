@@ -44,7 +44,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-4">
-                    <h5><i class="fa fa-cutlery" aria-hidden="true"></i> Top Breakfast</h5>
+                    <h5><i class="fa fa-utensils" aria-hidden="true"></i> Top Breakfast</h5>
                     <div class="box clearfix">
                         <a href="${ctx}/piatto?id=${colaz.id}">
                             <div style="background-image: url('${ctx}/res/${colaz.imageURL}');" class="thumb"></div>
@@ -55,7 +55,7 @@
                     </div>
                 </div>
                 <div class="col-lg-4">
-                    <h5><i class="fa fa-cutlery" aria-hidden="true"></i> Top Lunch</h5>
+                    <h5><i class="fa fa-utensils" aria-hidden="true"></i> Top Lunch</h5>
                     <div class="box clearfix">
                         <a href="${ctx}/piatto?id=${pranzo.id}">
                             <div style="background-image: url('${ctx}/res/${pranzo.imageURL}');" class="thumb"></div>
@@ -66,7 +66,7 @@
                     </div>
                 </div>
                 <div class="col-lg-4">
-                    <h5><i class="fa fa-cutlery" aria-hidden="true"></i> Top Dinner</h5>
+                    <h5><i class="fa fa-utensils" aria-hidden="true"></i> Top Dinner</h5>
                     <div class="box clearfix">
                         <a href="${ctx}/piatto?id=${cena.id}">
                             <div style="background-image: url('${ctx}/res/${cena.imageURL}');" class="thumb"></div>

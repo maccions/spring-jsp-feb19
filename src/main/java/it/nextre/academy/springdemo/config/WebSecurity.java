@@ -1,6 +1,7 @@
 package it.nextre.academy.springdemo.config;
 
 import it.nextre.academy.springdemo.service.UserService;
+import it.nextre.academy.springdemo.service.impl.CustomUserDetailServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -79,10 +80,15 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
     @Autowired
     private UserService userService;
 
+
+    //riscritto per ottenere un user corretto pieno dei nostri campi che il principal potrà usare nelle jsp
+    @Autowired
+    CustomUserDetailServiceImpl customUserDetailService;
+
     @Bean
     public DaoAuthenticationProvider authenticationProvider() {
         DaoAuthenticationProvider auth = new DaoAuthenticationProvider();
-        auth.setUserDetailsService(userService);
+        auth.setUserDetailsService(customUserDetailService);
         auth.setPasswordEncoder(passwordEncoder());
         return auth;
     }
