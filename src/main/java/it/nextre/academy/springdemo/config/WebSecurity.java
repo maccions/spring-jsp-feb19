@@ -24,12 +24,13 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
         http
                 .csrf().disable()
                 .authorizeRequests()
+                .antMatchers("/login*","/registration").permitAll()
+                .antMatchers("/admin/**").hasRole("ADMIN")
                 //per rendere pubblici i file statici rendendole tutte richieste autorizzate
                 .antMatchers("/res/**").permitAll()
                 //rotte per pagine
                 .antMatchers("/", "/index", "/menu", "/servizi", "/contatti", "/piatto", "/piatto/*", "/cerca","/test").permitAll()
-                .antMatchers("/login*","/registration").permitAll()
-                .antMatchers("/admin/**").hasRole("ADMIN")
+
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
@@ -46,6 +47,8 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
                 .logoutSuccessUrl("/login?logout=true") //custom redirect page
                 .permitAll()
                 //controllo la creazione del cookie solo se necessario
+                .and()
+                .exceptionHandling().accessDeniedPage("/error")
                 .and()
                 .sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED)

@@ -30,4 +30,14 @@ public class User extends BaseEntity {
     private Collection<Role> roles;
 
 
+    @Override
+    public String toString() {
+        return "User{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", password='length=" + password.length() + '\'' +
+                ", roles=" + roles +
+                '}';
+    }
 }//end class

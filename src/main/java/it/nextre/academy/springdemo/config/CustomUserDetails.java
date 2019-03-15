@@ -3,9 +3,12 @@ package it.nextre.academy.springdemo.config;
 import it.nextre.academy.springdemo.entity.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 import java.util.stream.Collectors;
 
 public class CustomUserDetails extends User implements UserDetails {
@@ -20,7 +23,11 @@ public class CustomUserDetails extends User implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return AuthorityUtils.commaSeparatedStringToAuthorityList(getRoles().stream().map(r->r.toString()).collect(Collectors.joining( "," )));
+        List<GrantedAuthority> authorities = new ArrayList<>();
+        getRoles().stream().forEach(r->{
+            authorities.add(new SimpleGrantedAuthority(r.getName()));
+        });
+        return authorities;
     }
 
     @Override
@@ -53,5 +60,8 @@ public class CustomUserDetails extends User implements UserDetails {
         return true;
     }
 
-
+    @Override
+    public String toString() {
+        return super.toString();
+    }
 }//end class

@@ -44,7 +44,7 @@ public class Pasto extends BaseEntity {
     public String getImageURL(){
         if(this.image!=null)
         return this.image.replace("\\","/");
-        return null;
+        return "images/noimage.jpg";
     }
 
 

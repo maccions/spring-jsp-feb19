@@ -164,4 +164,9 @@ public class PastoServiceImpl implements PastoService {
     public Pasto getOneRandom() {
         return pastoRepository.getOneRandom();
     }
+
+    @Override
+    public Long count() {
+        return pastoRepository.count();
+    }
 }//end class

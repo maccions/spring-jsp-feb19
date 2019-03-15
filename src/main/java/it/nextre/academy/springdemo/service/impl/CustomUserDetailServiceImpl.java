@@ -26,7 +26,9 @@ public class CustomUserDetailServiceImpl implements UserDetailsService {
         log.debug("Calling loadUserByUsername method with username: " + username);
 
         User tmp = userRepository.findByEmail(username);
-        System.out.println(new CustomUserDetails(tmp));
+        System.out.println("####"+tmp);
+        System.out.println("####"+new CustomUserDetails(tmp));
+
         return new CustomUserDetails(tmp);
     }
 }//end class

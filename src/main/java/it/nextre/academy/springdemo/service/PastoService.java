@@ -7,6 +7,9 @@ import java.util.List;
 
 public interface PastoService {
 
+
+    Long count();
+
     List<Pasto> getAll();
     public Pasto salva(Pasto pasto);
     Pasto getOne(Integer id);

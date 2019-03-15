@@ -8,6 +8,8 @@ import it.nextre.academy.springdemo.service.UserService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.web.server.ErrorPage;
+import org.springframework.security.access.AccessDeniedException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -15,8 +17,11 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
-
+import java.io.IOException;
 
 
 @Controller
@@ -39,20 +44,27 @@ public class GenericController {
         log.debug("/index");
         model.addAttribute("titolo","Home");
         Pasto colazione, pranzo, cena;
-        colazione = pastoService.getOneRandom();
-        do{
-            pranzo = pastoService.getOneRandom();
-        }while(colazione.equals(pranzo));
-
-        do{
-            cena = pastoService.getOneRandom();
-        }while(colazione.equals(cena) || pranzo.equals(cena));
 
 
+        if (pastoService.getAll().size()>=3) {
+            colazione = pastoService.getOneRandom();
+            do{
+                pranzo = pastoService.getOneRandom();
+            }while(colazione.equals(pranzo));
 
-        model.addAttribute("colaz",colazione);
-        model.addAttribute("pranzo",pranzo);
-        model.addAttribute("cena",cena);
+
+            do{
+                cena = pastoService.getOneRandom();
+            }while(colazione.equals(cena) || pranzo.equals(cena));
+
+            model.addAttribute("colaz",colazione);
+            model.addAttribute("pranzo",pranzo);
+            model.addAttribute("cena",cena);
+            model.addAttribute("pasti",pastoService.count());
+        }
+
+
+
 
         return "index";
     }
@@ -146,6 +158,12 @@ public class GenericController {
 
 
 
+
+
+    @GetMapping("/403")
+    public String do403(){
+        return "/403";
+    }
 
 
 

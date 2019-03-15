@@ -16,12 +16,7 @@
 
     <div class="page">
         <div class="container">
-            <h1>${statusCode} - ${messagge}</h1>
-            <hr>
-            <%--
-            <sec:authentication property="principal.roles" />
-            <sec:authentication property="principal.authorities" />
-            --%>
+            <h1>403 - Non disponi delle autorizzazioni necessarie per visualizzare questa pagina</h1>
         </div>
     </div>
 
