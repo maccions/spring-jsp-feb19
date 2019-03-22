@@ -46,7 +46,7 @@ public class GenericController {
         Pasto colazione, pranzo, cena;
 
 
-        if (pastoService.getAll().size()>=3) {
+        if (pastoService.count()>=3) {
             colazione = pastoService.getOneRandom();
             do{
                 pranzo = pastoService.getOneRandom();
